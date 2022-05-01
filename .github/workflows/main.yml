@@ -34,6 +34,14 @@ jobs:
       - name: 打包
         run: yarn docs:build
 
+      - name: Prepare SSH
+        run: >
+          cd ~ && mkdir .ssh &&
+          touch ~/.ssh/known_hosts &&
+          ssh-keyscan -H "$IP" >>~/.ssh/known_hosts
+        env:
+          IP: ${{ secrets.IP }}
+
       # 上传到阿里云
       - name: 发布到阿里云
         uses: easingthemes/ssh-deploy@v2.1.1
