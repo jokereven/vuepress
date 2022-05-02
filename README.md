@@ -14,6 +14,6 @@
 
 具体请参考：[GithubActions全自动部署](https://blog.code520.com.cn/posts/23304.html)
 
-#### 项目地址：121.4.48.188:8080
+#### 项目地址：121.4.48.188:4000
 
 #### 之后会同步到：https://vercel.com/
