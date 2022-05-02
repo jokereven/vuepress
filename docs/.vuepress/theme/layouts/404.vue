@@ -1,10 +1,12 @@
 <template>
   <div class="theme-container">
-    <div class="content">
-      <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
-    </div>
+    <div class="error">
+      <div class="container">
+        <div class="icon"></div>
+        <a href="/" class="go-back">返回首页</a>
+        <blockquote class="msg">{{ getMsg() }}</blockquote>
+      </div>
+	  </div>
   </div>
 </template>
 
@@ -24,3 +26,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ @import "404.css";
+ .theme-container{
+   width: 100%;
+   height: auto;
+ }
+ .msg{
+   margin-top:4rem;
+ }
+</style>

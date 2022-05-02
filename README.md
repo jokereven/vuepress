@@ -1,26 +1,19 @@
-# 开箱即用的vuepress编辑文档
+# vuepress
 
-> 说明: : clone下来，即可进行使用！
+## 项目背景
 
-**贡献者** 感谢每一个贡献的朋友!!!
+今天是2022-5-1，马上大二就结束了准备搞一下前端(React方向)的实习准备搭一个文档类的网站，本站点用于记录实习的一些事。
 
-## 完成的功能
+这里我直接把别人搭建好的东西拿过来了@作者[git-Where](https://github.com/git-Where)
 
-- [x] vuepress搭建成功
-- [x] valine评论系统
-- [x] 返回顶部插件
-- [x] 目录结构化,更具体
-- [x] less
-- [x] sass
-- [x] 夜间模式
-- [x] nginx
-- [x] 网络基础
-- [x] linux基础
+这是项目地址：@2662419405[2662419405](https://github.com/2662419405/vuepress_admin)
 
-:tada: 希望可以一直坚持下去
+[源项目地址](https://github.com/git-Where/vuepress_base)
 
-## 安装
+本站通过vuepress搭建，采用Github Acitons + Docker 自动部署
 
-1. `git clone https://github.com/git-Where/vuepress_base.git`
-2. `cd vuepress_admin && npm i`
-3. `vuepress dev docs`
+具体请参考：[GithubActions全自动部署](https://blog.code520.com.cn/posts/23304.html)
+
+#### 项目地址：121.4.48.188:8080
+
+#### 之后会同步到：https://vercel.com/

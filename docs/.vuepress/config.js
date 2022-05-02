@@ -1,6 +1,6 @@
 module.exports = {
-	title: '学习笔记文档',
-	description: '每天学一点,进步多一点',
+	title: '前端面试(React)',
+	description: 'You gotta win once in your life.',
 	extend: '@vuepress/theme-default',
 	plugins: ['@vuepress/back-to-top'],
 	base: '/',
@@ -42,7 +42,7 @@ module.exports = {
 	serviceWorker: true,
 	themeConfig: {
 		smoothScroll: true,
-		docsRepo: 'https://github.com/2662419405/vuepress_admin',
+		docsRepo: 'https://github.com/jokereven/vuepress',
 		docsDir: 'docs',
 		docsBranch: 'master',
 		activeHeaderLinks: true,
@@ -51,36 +51,30 @@ module.exports = {
 		editLinkText: '发现问题!及时纠正',
 		nav: [
 			{ text: '首页', link: '/' },
-			{ text: '笔记文档', link: '/home/' },
-			{ text: '面试题', link: '/code/' },
-			{ text: '思维导图', link: '/xmind/' },
-			{ text: '最后冲刺', link: '/once/' },
-			{ text: '源码', link: 'https://github.com/2662419405/vuepress_admin' },
+			{ text: '笔记文档', link: '/jokereven/' },
+			{ text: '面试题', link: '/Interview/' },
+			{ text: '源码', link: 'https://github.com/jokereven/vuepress/' },
 			{
-				text: 'SunHang',
+				text: 'jokereven',
 				items: [
 					{
-						text: '博客园',
-						link: 'https://www.cnblogs.com/sunhang32',
-					},
-					{
 						text: '个人博客',
-						link: 'https://sunhang.top/',
+						link: 'https://blog.code520.com.cn',
 					},
 					{
 						text: 'CSDN',
-						link: 'https://blog.csdn.net/qq_43268396',
+						link: 'https://blog.csdn.net/ZHOU125disorder',
 					},
 					{
 						text: 'github',
-						link: 'https://github.com/2662419405',
+						link: 'https://github.com/jokereven',
 					},
 				],
 			},
 		],
 		sidebarDepth: 2,
 		sidebar: {
-			'/yeqs/': [
+			'/jokereven/': [
 				'',
 				{
 					title: '前端之路',

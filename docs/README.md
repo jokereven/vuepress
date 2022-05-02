@@ -1,8 +1,8 @@
 ---
 home: true
-actionText: 快速开始 →
-actionLink: /yeqs/
-heroImage: /MonaLisa.png
+actionText: Let's Go →
+actionLink: /jokereven/
+heroImage: /jokereven.png
 title: Good Good Study,Day Day Up
 features:
 - title: 笔记整理
@@ -11,5 +11,5 @@ features:
   details: 每天学一点,进步多一点.
 - title: 有趣性
   details: 关于最新学习的一些有趣的效果或者是看到有趣的事情
-footer: Copy @ 2020 - 2021 yeqs 版权所有
+footer: Copy @ 2020 - 2021 jokereven 版权所有
 ---
