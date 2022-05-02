@@ -42,8 +42,8 @@ jobs:
         env:
           IP: ${{ secrets.IP }}
 
-      # 上传到阿里云
-      - name: 发布到阿里云
+      # 上传到服务器
+      - name: 发布到121
         uses: easingthemes/ssh-deploy@v2.1.1
         env:
           # 私钥
