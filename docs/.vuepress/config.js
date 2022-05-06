@@ -77,9 +77,9 @@ module.exports = {
 			'/jokereven/': [
 				'',
 				{
-					title: '前端之路',
+					title: '前端',
 					collapsable: true,
-					children: ['css', 'html'],
+					children: ['html', 'css','javascript'],
 				},
 			],
 			xmind: [''],

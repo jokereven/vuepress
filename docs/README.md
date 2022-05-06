@@ -11,5 +11,5 @@ features:
   details: 每天学一点,进步多一点.
 - title: 有趣性
   details: 关于最新学习的一些有趣的效果或者是看到有趣的事情
-footer: Copy @ 2020 - 2021 jokereven 版权所有
+footer: Copy @ 2022 - 2023 jokereven 版权所有
 ---
