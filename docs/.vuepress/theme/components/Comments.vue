@@ -22,8 +22,8 @@ export default {
       window.AV = require("leancloud-storage");
       const valine = new Valine({
         el: "#valine-vuepress-comment",
-        appId: "DxU5fgMdilCKbdcuzHAXAOhF-gzGzoHsz",
-        appKey: "YVvhfTkk07VtbJLpOLBzYbdu",
+        appId: "HHF8qLHvVG0zmSPXl9nqmscU-gzGzoHsz",
+        appKey: "b7kGqaaxlBMTpw7jNV4JeWaj",
         placeholder: "发现错误,纠正一下",
         notify: true,
         verify: true,
@@ -56,6 +56,6 @@ export default {
   margin-right auto;
 }
 .v .veditor{
-  background url("https://cdn.jsdelivr.net/gh/2662419405/imgPlus/tu.png") 100% 70% no-repeat !important;  
+  background url("https://cdn.jsdelivr.net/gh/2662419405/imgPlus/tu.png") 100% 70% no-repeat !important;
 }
 </style>
