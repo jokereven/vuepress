@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid gray;
+      overflow: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div>
+    生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。生活到处是磨难，为难我的人多了，你算老几。
+  </div>
+
+
+  <script>
+    // 扩展一个事件
+    // onload是当文档内所有内容全部加载完毕以后所执行的事件(图片，HTML结构，音视频)
+    // 只可以写一个
+    // DOMContentLoaded   页面加载完成
+    // 当我的页面的DOM结构或者HTML结构加载完触发的行为
+
+    // DOM3级
+    // DOM3级其实就是在DOM2级事件基础上增加了很多的事件类型
+    // 1.UI事件    用户和页面上元素交互式触发，比如load
+    // 2.焦点事件  当元素获取焦点或者失去焦点，blur，focus
+    // 3.鼠标事件  鼠标在页面上进行操作，比如dblclick
+    // 4.滚轮事件  使用鼠标滚轮滚动的时候触发的事件，mousewheel
+    // 5.文本事件  input框内容输入的时候触发，input
+    // 6.键盘事件  用户通过键盘在页面上操作触发，比如keydown，keyup
+
+    // 滚轮事件
+    var div = document.getElementsByTagName("div")[0];
+    div.onmousewheel = function () {
+      console.log("你滚了");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包
+        // 什么是闭包，闭包有什么实际的应用，优缺点
+        // 普通函数
+        // function show(x) {
+        //     return x
+        // }
+        // alert(show("光头强"));
+
+        // 私有函数
+        // function show(x) {
+        //     function person(x) {
+        //         return x
+        //     }
+        // }
+        // alert(show()("jokereven"))
+
+        // 匿名函数
+        // 没有名字的函数
+        // 立即执行函数
+        // (function(){
+        //     alert("匿名函数");
+        // })()
+        // 最外侧的括号，是函数的执行符号，代表调用，也可以应用于传参
+        // (function(x){
+        //     alert(x);
+        // })("jokereven");
+
+        // 有时候也叫拉姆达函数
+        // 写好以后不需要调用，可以立刻自己执行，也叫自执行函数
+
+        // 由于外部无法引用内部的变量，执行完以后很快就会内存被释放，这种东西不会污染全局对象
+        // 自执行函数，也就是定义和调用合为一体
+
+        // 1.不会污染全局对象
+        // 2.定义和调用合为一体
+
+        // 闭包
+        // 概念：闭包是指有权访问另一个函数作用域种的变量的函数
+        // 类型：闭包是函数
+        // 作用：访问另一个函数作用域种的变量
+
+        // 创建闭包的常见方式就是在一个函数内部创建另一个函数，通过另一个函数访问这个函数的局部变量
+
+        function person() {
+            var ming = "葫芦娃";
+        }
+        console.log(ming);
+
+        // function person(){
+        //     var ming = "葫芦娃";
+        //     return ming;
+        // }
+        // console.log(person())
+
+        // function person(){
+        //     var ming = "林品如";
+        //     // 闭包是什么？如下所示，闭包就是一个函数
+        //     return function(){
+        //         return ming;
+        //     }
+        // }
+        // console.log(ming)           //内部变量/私有变量
+        // 闭包的作用是什么？通过闭包可以访问私有变量
+        // console.log(person()());
+
+        // 优缺点
+        // 优点/缺点       会把变量驻留在内存里，使用的都是局部变量，可以减少全局变量的使用
+        // 全局变量是魔鬼
+
+
+        // 会把变量驻留在内存里
+        // 局部变量的生命周期，从声明开始，到所在函数体调用以后被删除
+
+
+        // 累加
+        // 0 1 2 3 4 5 6 7 8 9
+        // 案例
+        // 全局变量生命周期，从声明开始，一直到页面关闭以后删除
+        // var x = 0;
+        // function add(){
+        //     x+=1;
+        //     console.log(x);
+        // }
+        // setInterval(add,1000);
+        // 局部变量生命周期，从声明开始，一直到所在函数体运行以后被删除
+
+        // function add(){
+        //     var x = 0;
+        //     x+=1;
+        //     console.log(x);
+        //     return x;
+        // }
+        // setInterval(add,1000);
+
+        // function add() {
+        //     var x = 0;
+        //     return function () {
+        //         x += 1;
+        //         return x;
+        //     }
+        // }
+        // console.log(add()());           //1
+        // console.log(add()());           //2              是1不是2
+
+        // 解决思路
+        // var addFn = add();
+        // console.log(addFn());
+        // console.log(addFn());
+        // console.log(addFn());
+        // 设置成null释放内存
+        // addFn = null;
+        // console.log(addFn());
+
+        // 一个杯子整体的页面，每一滴水就相当是一个局部变量，在使用闭包的时候，如果闭包内局部变量过多，就会造成内存泄漏，溢出
+
+
+        // 释放内存
+
+        // 小的总结
+        // 闭包概念：在函数外部访问其内部局部私有变量的函数叫做闭包
+        // 原理：通过匿名函数讲局部变量驻留在我的内存当中，达到全局变量效果
+        // 优缺点
+        // 减少了全局变量的使用频率，防止污染
+        // 由于闭包作用域返回的局部变量不会及时被销毁释放，所以可能会占用更多内存，过多的情况下会导致内存泄漏
+    </script>
+</body>
+
+</html>

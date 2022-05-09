@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <button onclick="fn()">点击</button> -->
+  <!-- <button>按钮</button> -->
+
+  <button>点击1</button>
+  <button>点击2</button>
+
+
+  <script>
+        // 绑定事件方法：内联模型/事件属性模型，动态绑定/分配事件模型
+        // 讲一些事件里面的其他内容
+        // 事件级别      级别的区别    事件模型    event事件对象
+        // DOM级别     4种    0 1 2 3
+        // DOM0级    DOM1级   DOM2级   DOM3级
+        // function fn(){
+        //     alert("aaa");
+        // }
+
+        // DOM1级    没有处理
+
+        // DOM2级
+        // addEventListener(事件，事件函数，是否支持冒泡)绑定事件
+        // removeEventListener()解除绑定事件
+        // var btn = document.getElementsByTagName("button")[0];
+        // btn.addEventListener("click",fn,false);
+        // function fn(){
+        //     alert("aaa");
+        // }
+
+        // var btn = document.getElementsByTagName("button");
+        // DOM2级解绑事件
+        // btn[0].addEventListener("click",fn,false);
+        // function fn(){
+        //     alert("aaa")
+        // }
+        // btn[1].addEventListener("click",fn1,false);
+        // function fn1(){
+        //     btn[0].removeEventListener("click",fn,false);
+        // }
+
+        // DOM0级解绑事件
+        // btn[0].onclick = function(){
+        //     alert("aaa")
+        // }
+        // btn[1].onclick = function(){
+        //     btn[0].onclick = null;
+        // }
+
+        // 冻结
+  </script>
+</body>
+
+</html>

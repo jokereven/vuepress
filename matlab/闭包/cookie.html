@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 原理：本地客户端存储相关数据
+        // 网景
+        // 通过http协议生成的
+        // 登录注册，     购物车添加
+
+        // cookie组成
+        // 名/值组成           name = value
+        // name = value;[expires=date];
+        // name=value是必须的         []里面是可选的
+        // []里面的东西代表的是日期,数据存储周期
+        // 会话代表的是页面关闭以后就没了
+
+        // 先输出一次cookie，看浏览器是不是支持cookie
+        // alert(document.cookie);
+        // 弹了个空，说明当前页面没有cookie数据缓存
+
+        // cookie写入
+        // document.cookie = "user=洪世贤";
+        // alert(document.cookie);
+
+        // 编码写入
+        // 编码和解码
+        // 编码：encodeURIComponent()
+        // 解码：decodeURIComponent()
+        // document.cookie = "user="+encodeURIComponent("葫芦娃");
+        // alert(document.cookie);
+        // alert(decodeURIComponent(document.cookie));
+
+        // setDate()
+        // 设置月份当中的某一天
+
+        // var date = new Date();
+        // date.setDate(date.getDate()+7);     //一周以后
+        // document.cookie = "user="+encodeURIComponent("回村儿的诱惑")+";expires="+date;
+        // alert(decodeURIComponent(document.cookie));
+
+        // 删除cookie
+        // var date = new Date();
+        // date.setDate(date.getDate()-1);     //一周以后
+        // document.cookie = "user="+encodeURIComponent("回村儿的诱惑")+";expires="+date;
+        // alert(decodeURIComponent(document.cookie));
+
+        // document.cookie = "user="+encodeURIComponent("回村儿的诱惑")+";expires="+new Date(0);
+    </script>
+</body>
+
+</html>

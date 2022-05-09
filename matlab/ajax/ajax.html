@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box {
+      width: 1000px;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #box>div {
+      width: 22%;
+      border: 1px solid gray;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <script>
+    // 可以从服务器端来请求数据
+    // 最大特点，页面不刷新
+    // 传统验证方式缺点：
+    // 1.耗费流量：其他数据反复提交给浏览器
+    // 2.耗费时间长：多次提交的耗时
+    // 3.用户体验差：仅仅因为用户名验证失败，导致整个页面重新加载，其他数据又得重新写
+    //  验证方式优点
+    // 1.节省流量：只需要传递需要验证的数据
+    // 2.节省操作时间
+    // 3.用户体验好，不刷新
+
+    // ajax核心技术，XMLHttpRequest，简称叫XHR
+    // 兼容的问题
+    // 低版本IE
+
+    // 主流浏览器方式
+    // var xhr = new XMLHttpRequest();         //固定格式，创建XHR对象
+    // 低版本IE方式
+    // var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    // 方法用if，属性用||
+
+    var xhr;
+    if (window.XMLHttpRequest) {
+      xhr = new XMLHttpRequest();
+    } else {
+      xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    // 请求方式一共分为两种
+    // get   post
+    // get请求把参数包含在URL中
+    // get相比较post来说，安全性差一点，包含一些机密信息的话，建议大家去使用post
+    // 在做数据查询的时候，没必要进行加密，建议使用get
+    // 创建请求，需要调用open这个方法   open(请求方式get/post，请求地址url)
+    xhr.open("get", "ajax.json");
+    xhr.send();
+    // ajax接收服务器返回信息
+    // 发送信息由ajax负责发送，接收的时候，需要ajax接收信息，可以接收json格式，本质字符串的数据
+    // ajax属性       readyState：表示读取返回的状态
+    // 0 1 2 3 4
+    // 0：刚刚创建了ajax对象
+    // 1：已经调用了open方法，创建http请求
+    // 2.已经调用了send方法，发送了请求
+    // 3.正在返回数据，但是不完整，已经有了一小部分
+    // 4.ajax请求完成，数据返回完整
+    // 监听         onreadystatechange
+    // 接收的数据是        XML对象.responseText
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        // console.log(xhr.reponseText);
+        // 判断状态码    status
+        if (xhr.status == 200) {
+          // console.log(xhr.responseText);
+          var txt = JSON.parse(xhr.responseText);
+          // console.log(txt);
+          for (var i = 0; i < txt.length; i++) {
+            var box = document.getElementById("box");
+            // console.log(txt[i]);
+            // txt[i].name    /    .age
+            // 创建节点
+            var div = document.createElement("div");
+            var p1 = document.createElement("p");
+            p1.innerHTML = txt[i].name;
+            var p2 = document.createElement("p");
+            p2.innerHTML = txt[i].age;
+            // 添加节点
+            div.appendChild(p1);
+            div.appendChild(p2);
+            box.appendChild(div);
+          }
+        }
+      }
+    }
+        // 状态码的东西
+        // HTTP请求
+        // 通过网络进行通信的规则
+        // 无状态协议(可以保存自己的东西cookie)，不建立持久的链接
+        // HTTP请求的步骤    7个
+        // 1.建立连接
+        // 2.浏览器想服务器发送请求命名
+        // 3.发送请求头信息
+        // 4.服务器应答
+        // 5.服务器发送应答头信息
+        // 6.服务器发送数据
+        // 7.关闭连接
+        // 请求头：身份验证的信息
+        // 请求体/请求正文，包括一些查询的字符串的信息，表单的信息
+
+        // 响应    状态码
+        // 三位数字构成
+        // 1xx  信息，表示收到web浏览器请求，正在进一步处理中
+        // 2xx  成功，表示用户请求被正确接收        比如200
+        // 3xx  重定向，表示请求没成功，需要进一步处理
+        // 4xx  客户端错误，表示客户提交的信息有误  NOT Found   比如404
+        // 5xx  服务器错误，表示服务器不能完成对请求的处理   比如500    502
+  </script>
+</body>
+
+</html>

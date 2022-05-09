@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td {
+      width: 200px;
+      height: 35px;
+      border: 1px solid gray;
+      text-align: center;
+    }
+
+    div {
+      width: 1020px;
+      height: 39px;
+      background: rgba(120, 120, 120, 0.5);
+      position: absolute;
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <table cellspacing="0" style="position: relative;">
+    <tr>
+      <td>jokereven</td>
+      <td>20</td>
+      <td>撩妹儿</td>
+      <td><button>删除</button></td>
+      <td><button>冻结</button></td>
+      <td><button>解冻</button></td>
+    </tr>
+    <div></div>
+  </table>
+</body>
+<script>
+  var btn = document.getElementsByTagName("button");
+  var box = document.getElementsByTagName("div")[0];
+
+  // DOM0级
+  btn[0].onclick = function () {
+    this.parentNode.parentNode.remove();
+  }
+  btn[1].onclick = function () {
+    btn[0].onclick = null;
+    box.style.display = "block";
+  }
+  btn[2].onclick = function () {
+    box.style.display = "none";
+    btn[0].onclick = function () {
+      this.parentNode.parentNode.remove();
+    }
+  }
+
+
+    // DOM2级
+    // btn[0].addEventListener("click",fn,false);
+    // function fn(){
+    //     this.parentNode.parentNode.remove();
+    // }
+    // btn[1].addEventListener("click",fn1,false);
+    // function fn1(){
+    //     btn[0].removeEventListener("click",fn,false);
+    //     box.style.display = "block";
+    // }
+    // btn[2].addEventListener("click",fn2,false);
+    // function fn2(){
+    //     btn[0].addEventListener("click",fn,false);
+    //     box.style.display = "none";
+    // }
+
+
+
+    // 兼容性问题
+
+    // btn[0].addEventListener("click",fn,false);
+    // function fn(){
+    //     alert("aaa");
+    // }
+
+    // attachEvent(事件，事件函数)    传两个参数，低版本IE不支持冒泡        detachEvent()
+    // btn[0].attachEvent("onclick",fn);
+    // function fn(){
+    //     alert("aaa");
+    // }
+
+
+</script>
+
+</html>

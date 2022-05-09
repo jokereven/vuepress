@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            width: 1170px;
+            height: auto;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        #content>div{
+            width: 570px;
+            height: 370px;
+            font-size: 20px;
+            /* background: deeppink; */
+        }
+        img{
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        #content>div>p>span:nth-of-type(3){
+            margin-left: 15px;
+        }
+        #content>div>p>span:nth-of-type(1){
+            font-size: 22px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+    <script src="ajax.js"></script>
+    <script>
+        var content = document.getElementById("content");
+        ajax("index.json",function(json){
+            // console.log(json);
+            var txt = JSON.parse(json)
+            for(var i=0;i<txt.length;i++){
+                // console.log(txt[i]);
+                var div = document.createElement("div");
+                var img = document.createElement("img");
+                img.src = txt[i].url;
+                var p = document.createElement("p");
+                var sp1 = document.createElement("span");
+                sp1.innerHTML = txt[i].zk;
+                var sp2 = document.createElement("span");
+                sp2.innerHTML = txt[i].zk2;
+                var sp3 = document.createElement("span");
+                sp3.innerHTML = txt[i].name;
+                p.appendChild(sp1);
+                p.appendChild(sp2);
+                p.appendChild(sp3);
+                div.appendChild(img);
+                div.appendChild(p);
+                content.appendChild(div);
+            }
+        },function(status){
+            console.log(status);
+        })
+    </script>
+</body>
+</html>

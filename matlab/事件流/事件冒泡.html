@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 456px;
+      height: 456px;
+      background: #096;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 150px;
+    }
+
+    p {
+      width: 256px;
+      height: 256px;
+      background: skyblue;
+      box-sizing: border-box;
+      padding: 100px;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>
+      <img src="../img/1.png">
+    </p>
+  </div>
+
+
+  <script>
+
+    var div = document.getElementsByTagName("div")[0];
+    var p = document.getElementsByTagName("p")[0];
+    var img = document.getElementsByTagName("img")[0];
+    // 绑定事件 p -> img -> div
+    // 如果在事件传播当中，同时有冒泡和捕获，那么执行顺序就变成了
+    // 捕获>冒泡事件原>冒泡
+
+    div.addEventListener("click", function () {
+      alert("div");
+    }, false)
+    p.addEventListener("click", function () {
+      alert("p")
+    }, true)
+    img.addEventListener("click", function (event) {
+      // stopPropagation()阻止事件冒泡
+      // event.stopPropagation();
+      alert("img");
+    }, false)
+
+        // p.ondblclick = function(){
+        //     alert("p");
+        // }
+        // div.onclick = function(){
+        //     alert("div");
+        // }
+        // img.onclick = function(){
+        //     alert("img");
+        // }
+        // 同类型的事件进行传播
+        // 事件冒泡:事件像泡泡一样从最开始生成的地方一层一层的往上冒
+
+
+        // event事件对象
+        // 当成参数传进去，然后使用他的方法可以阻止事件冒泡
+  </script>
+</body>
+
+</html>

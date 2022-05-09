@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 变量的链式作用域
+        // 全局作用域    局部作用域
+        // var x = 999;
+        // function fn(){
+        //     alert(x);
+        // }
+        // fn()
+
+        // function fn(){
+            // alert(x);
+            // var n = 999;
+        // }
+        // console.log(n);
+
+        // 案例
+        // function fn1(){
+        //     var x = 999;
+        //     function fn2(){
+        //         var x = "皮炎平";
+        //         console.log(x);
+        //     }
+        //     fn2()
+        // }
+        // fn1();
+
+        // 链式作用域
+        // fn1内部的局部变量对fn2是可见的，但是呢，fn2内部的变量对fn1来说，就是不可见的
+        // 子级会一层一层向外寻找
+
+        // 特权方法
+        // 某些情况下，如果我们呢想在函数外部访问私有变量或者私有函数，就可以通过特权方法
+        // 构造函数
+        // 构造函数里面，通过我们新开拓的一个对外可见的公共接口(公有函数)，通过这个公有函数找到内部私有变量或者函数
+
+        // function Fn(){
+        //     var ming = "光头强";
+        //     var sayAge = function(){
+        //         return "hello world"
+        //     }
+        //     this.hanshu = function(){
+        //         return ming+sayAge();
+        //     }
+        // }
+        // var fn = new Fn();
+        // console.log(ming);
+        // console.log(fn.hanshu());
+    </script>
+</body>
+
+</html>

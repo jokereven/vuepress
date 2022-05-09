@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    ajax("ajax.json", function (zhi) { console.log(zhi); }, function (status) { console.log(status); })
+
+    function ajax(url, suFn, faFn) {
+      var xhr;
+      if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+      } else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xhr.open("get", url);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            suFn(xhr.responseText);
+          } else {
+            faFn(xhr.status);
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
