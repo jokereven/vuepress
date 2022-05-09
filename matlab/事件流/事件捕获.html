@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 456px;
+      height: 456px;
+      background: #096;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 150px;
+    }
+
+    p {
+      width: 256px;
+      height: 256px;
+      background: skyblue;
+      box-sizing: border-box;
+      padding: 100px;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>
+      <img src="../img/1.png">
+    </p>
+  </div>
+
+  <script>
+    // 事件捕获，自上而下执行代码，把addEventListener里面的第三个参数设置成true，和事件冒泡相反，冒泡第二个参数设置为false
+    var div = document.getElementsByTagName("div")[0];
+    var p = document.getElementsByTagName("p")[0];
+    var img = document.getElementsByTagName("img")[0];
+    // // 绑定事件
+    // div.addEventListener("click", function () {
+    //   alert("div");
+    // }, true)
+    // p.addEventListener("click", function () {
+    //   alert("p")
+    // }, true)
+    // img.addEventListener("click", function (event) {
+    //   // stopPropagation()阻止事件冒泡
+    //   event.stopPropagation();
+    //   alert("img");
+    // }, true)
+
+
+    // 如果在事件传播当中，同时有冒泡和捕获，那么执行顺序就变成了
+    // 捕获>冒泡事件原>冒泡
+    // window document body div
+    div.addEventListener("click", function () {
+      console.log("div")
+    }, true);
+    window.addEventListener("click", function () {
+      console.log("window")
+    }, true);
+    document.addEventListener("click", function () {
+      console.log("document")
+    }, true);
+    document.body.addEventListener("click", function () {
+      console.log("body")
+    }, true);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button>开始</button>
+
+  <script>
+    var btn = document.getElementsByTagName("button")[0];
+    // btn.onclick = function(){
+    //     alert("aaa");
+    // }
+    // btn.onclick = function(){
+    //     alert("bbb");
+    // }
+    // DOM0级，只能给一个元素的某一个行为绑定一次方法
+
+    btn.addEventListener("click", function () {
+      alert("aaa");
+    }, false);
+    btn.addEventListener("click", function () {
+      alert("bbb");
+    }, false)
+        // DOM2级可以给某一个元素的同一个行为绑定不同的方法
+        // 鼠标事件
+        // 表单时间
+        // 键盘事件
+        // 粘贴板事件
+        // 窗口事件
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button>点击</button>
+  <a href="https://www.baidu.com">跳转</a>
+
+  <script>
+    // event事件对象：指的是与特定事件相关且包含事件详细信息的对象
+    // 人话：通俗理解，把event当成一个事件处理程序的参数，调用事件时，传入进去，使用它的方法
+
+    // 兼容IE8及以下
+    // var btn = document.getElementsByTagName("button")[0];
+    // btn.addEventListener("click", function (event) {
+      // event = event || window.event;
+      // event对象方法   2种
+      // 1.stopPropagation()     阻止事件冒泡
+      // 阻止事件冒泡的兼容问题
+      // cancelBubble代替stopPropagation()
+    //   event.stopPropagation()
+    //   if (event.stopPropagation) {
+    //     event.stopPropagation();
+    //   } else {
+    //     event.cancelBubble = true;
+    //   }
+    // }, false)
+
+
+    // 2.preventDefault()      阻止事件的默认操作
+    // a标签
+    // var oa = document.getElementsByTagName("a")[0];
+    // oa.addEventListener("click",function(event){
+    // event = event || window.event;
+    // event.preventDefault();
+    // console.log("我没动我没动");
+    // 兼容性问题    IE8及以下
+    // returnValue值为false来实现
+    //     if(event.preventDefault){
+    //         event.preventDefault();
+    //     }else{
+    //         event.returnValue = false;
+    //     }
+    //     console.log("我没有跳转！");
+    // },false)
+
+
+    // stopImmediatePropagation()停止当前进程
+    // 也是阻止事件，不同点时还可以把这个元素绑定的同类型事件也进行阻止
+    // var oa = document.getElementsByTagName("a")[0];
+    // oa.addEventListener("click", fn1, false);
+    // oa.addEventListener("click", fn2, false);
+    // function fn1(event) {
+    //   event.preventDefault();
+    //   event.stopImmediatePropagation();
+    //   console.log("我没有跳转");
+    // }
+    // function fn2() {
+    //   console.log("同类型事件");
+    // }
+  </script>
+</body>
+
+</html>
