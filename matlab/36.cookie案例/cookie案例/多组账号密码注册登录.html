@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #zc{
+            width: 300px;
+            height: 400px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        #zc>h1{
+            margin: 50px;
+        }
+        #zc>p{
+            margin-top: 40px;
+        }
+        button{
+            width: 120px;
+            height: 35px;
+            margin-top: 50px;
+        }
+        #dl{
+            width: 300px;
+            height: 400px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        #dl>h1{
+            margin: 50px;
+        }
+        #dl>p{
+            margin-top: 40px;
+        }
+        div{
+            margin-left: 150px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="zc">
+        <h1>注册</h1>
+        <p>账号：<input type="text" id="zc_zh"></p>
+        <p>密码：<input type="password" id="zc_mm"></p>
+        <button id="btn_zc">注册</button>
+    </div>
+    <div id="dl">
+        <h1>登录</h1>
+        <p>账号：<input type="text" id="dl_zh"></p>
+        <p>密码：<input type="password" id="dl_mm"></p>
+        <button id="btn_dl">登录</button>
+    </div>
+
+
+    <script>
+        var btn_zc = document.getElementById("btn_zc");
+        var btn_dl = document.getElementById("btn_dl");
+        var zc_zh = document.getElementById("zc_zh");
+        var zc_mm = document.getElementById("zc_mm");
+        var dl_zh = document.getElementById("dl_zh");
+        var dl_mm = document.getElementById("dl_mm");
+
+        var arr = [];
+        btn_zc.onclick = function(){
+            arr.push(zc_zh.value,zc_mm.value);
+            var date = new Date();
+            date.setDate(date.getDate()+7);
+            document.cookie = "name="+encodeURIComponent(arr)+";expires="+date;
+        }
+        btn_dl.onclick = function(){
+            // console.log(decodeURIComponent(document.cookie));
+            // wode 123     nide 456    tade 789
+            var index = decodeURIComponent(document.cookie).split("=");
+            // console.log(index[1]);
+            var index1 = index[1].split(",");
+            console.log(index1);
+            // 循环遍历
+            for(var i=0;i<index1.length;i++){
+                if(i%2==0){
+                    if(index1[i]==dl_zh.value&&index1[i+1]==dl_mm.value){
+                        alert("成功");
+                        break;
+                    }
+                }
+            }
+        }
+        // 大家觉得有问题吗，没问题的来波1，有问题的来波2
+        // 账号，密码，账号，密码，账号，密码
+        // nide 456可以
+        // 有一件事儿
+        // 尽量都测一下
+
+        // 购物车添加功能
+        // 两个页面
+        // 第一个页面：商品栏        商品名称，价格，图片
+        // 第二个页面：购物车页面      
+        // 操作第一个页面的时候，点击添加，第二个页面里面生成
+        // 大家看懂了吗
+        // 购物车商品添加功能
+        // 今天先思考，思考作业，明天讲
+
+
+        // 是的
+        // 可以下课了
+
+    </script>
+</body>
+</html>

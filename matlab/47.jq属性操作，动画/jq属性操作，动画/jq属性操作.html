@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .cls{
+            box-shadow: 0 0 10px gray;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box" style="font-size: 50px;"></div> -->
+    <!-- <input type="text"> -->
+    <!-- <img src="1.jpg" alt="false"> -->
+    <a href="www.baidu.com"></a>
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // 操作元素属性
+        // attr(name)       
+        // $(选择器).attr(属性)
+        // 里面只写一个值的时候代表获取
+        // console.log($("div").attr("style"));
+        // console.log($("input").attr("type"));
+        // console.log($("img").attr("src"));
+        // $("div").attr("style","background:blue");
+        // console.log($("a").attr("href"));
+
+        // 删除元素的属性
+        // removeAttr()
+        // $("div").removeAttr("style");
+
+        // addClass()
+        // $("div").attr("class","cls");            //设置
+        // $("div").addClass("cls");                    //追加
+
+        // hasClass()   判断是否含有某个样式            
+        // console.log($("div").hasClass("box"));
+
+        // prop()也是操作属性的,用法和attr一样
+        // console.log($("a").prop("href"));
+
+        // 对于html本身就有的固有属性，在处理的时候，使用prop
+        // 操作自定义的DOM属性，在处理的时候，使用attr
+        
+    </script>
+</body>
+</html>

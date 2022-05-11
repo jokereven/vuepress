@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <p class="title">发表您的留言</p>
+        <input type="text" class="llb">
+        <button class="btn">发表</button>
+        <p style="font-weight: bold;margin-top: 10px;">留言（<span class="num">1</span>）</p>
+        <div class="box">
+            <div>
+                <img src="1.png" alt="">
+                <div>
+                    <p>其实我最爱线代老师</p>
+                    <span>我是陈洁银，我好帅</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 获取元素   留言板   发表按钮   文本框
+        var llb = document.getElementsByClassName("llb")[0];
+        var btn = document.getElementsByClassName("btn")[0];
+        var box = document.getElementsByClassName("box")[0];
+        var num = document.getElementsByClassName("num")[0];
+
+        btn.onclick = function () {
+            var index = 0;
+            // alert("aaa");
+            // num.innerHTML++;
+            var odiv1 = document.createElement("div");
+            var oimg = document.createElement("img");
+            oimg.src = "1.png";
+            var odiv2 = document.createElement("div");
+            var op = document.createElement("p");
+            op.innerHTML = "其实我最爱线代老师";
+            var ospan = document.createElement("span");
+            var txt = llb.value;
+            ospan.innerHTML = txt;
+            // 添加
+            odiv2.appendChild(op);
+            odiv2.appendChild(ospan);
+            odiv1.appendChild(oimg);
+            odiv1.appendChild(odiv2);
+            box.appendChild(odiv1);
+
+
+            // console.log(box.childNodes);
+            var arr = box.childNodes;
+            for (var i = 0; i < arr.length; i++) {
+                console.log(arr[i])
+                if (arr[i].nodeName.toLowerCase() == "div") {
+                    index++
+                }
+            }
+            num.innerHTML = index;      //index==2
+
+        }
+    </script>
+</body>
+
+</html>

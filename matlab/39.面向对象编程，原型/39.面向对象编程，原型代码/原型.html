@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型
+        // 每一个函数都有一个属性叫做prototype，这个东西的值是一个对象，（属性的集合）,默认只有一个叫做constructor的属性，指向这个函数本身
+        // 原型是一个对象，其他的对象可以通过它实现属性继承
+        // function Person(){
+
+        // }
+        // Person.prototype.name = "张三";
+        // Person.prototype.age = "18";
+        // var person1 = new Person();
+        // var person2 = new Person();
+
+        function Person(name){
+            this.name = name;
+        }
+        Person.prototype.sayName = function(){
+            return this.name;
+        }
+        var person1 = new Person("洪世贤");
+        // var person2 = new Person("林品如");
+        // console.log(person1.name);
+        // console.log(person2.name);
+        // console.log(person1.sayName());
+        // console.log(person2.sayName());
+        console.log(person1.__proto__.constructor);
+        console.log(person1.constructor);
+    </script>
+</body>
+</html>

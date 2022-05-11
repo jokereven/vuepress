@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JSON是一种轻量级的数据格式
+        // 用来存储的表示数据的
+        // JSON并不是js当中独有的数据格式
+        // JSON的语法可以表示3种类型的值
+        // 1.简单值 2.对象 3.数组
+        // 包括字符串，数值，布尔值，null不包含特殊值undefined
+        // "小明"       最简单的JSON的表示方法
+
+        // var person = {
+        //     name:"小红",
+        //     age:18
+        // }
+        // JSON表示方法
+        // '{"name":"小刚","age":"20"}'
+        // '["小强",100,true]'
+        // 一般情况下，JSON的结构是一种复杂形式，也就是数组结合对象的形式
+        // var json = '[{"name":"李华","age":"18"},{"name":"韩梅梅","age":"20"},{"name":"李雷","age":"22"}]'
+        // console.log(json);
+        // console.log(typeof json);
+
+        // 序列化和反序列化
+        // 就是指JSON格式的数据和普通数组对象格式的来回转换
+        // 序列化：如果是原生的js值，也就是原生的数组对象，可以转换成JSON字符串
+        // 反序列化：加载好的JSON文件，转成可以正常解析的原生js值，也就是数组对象
+        // 序列化
+        var json = [{"name":"李华","age":"18"},{"name":"韩梅梅","age":"20"},{"name":"李雷","age":"22"}]
+        // JSON.stringify()
+        // console.log(JSON.stringify(json));
+        // console.log(typeof JSON.stringify(json));
+        // JSON.stringify()提供了第二个参数，可以是数组，也可以是函数，用于过滤,也提供了第三个参数，过滤排版
+        // console.log(JSON.stringify(json,["name"]));
+        // console.log(JSON.stringify(json,function(key,value){
+        //     if(key=="name"){
+        //         return "Mr."+value;
+        //     }else{
+        //         return value;
+        //     }
+        // }))
+        // var txt = JSON.stringify(json,["name","age"],4);
+        var txt = JSON.stringify(json,["name","age"],"----");
+        console.log(txt);
+
+
+        // 反序列化/解析
+        // JSON.parse
+        // console.log(JSON.parse(json));
+        // console.log(typeof JSON.parse(json));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 组合继承
+        // 所有实例都能拥有自己的属性，并且可以使用相同的方法，通过上面的两种方式结合体，结合了两者有点，也是最常用的继承方式
+        // 核心：通过调用父类的构造，继承父类的属性并保留传参的优点，然后再通过将父类实例作为字类的原型，实现函数复用
+        function Person(name){
+            this.name = name;
+            this.friends = ["林清玄","高峰"];
+        }
+        // 原型方法
+        Person.prototype.getName =  function(){
+            return this.name;
+        }
+        function Parent(age){
+            Person.call(this,"李举");       //构造函数继承
+            this.age = age;
+        }
+        // 原型链继承
+        Parent.prototype = new Person("李举");
+        var parent = new Parent(18);
+        console.log(parent.name);
+        console.log(parent.friends);
+        console.log(parent.age);
+        console.log(parent.getName());
+        parent.friends.push("小明");
+        console.log(parent.friends);
+
+    </script>
+</body>
+</html>

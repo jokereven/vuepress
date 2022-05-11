@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 50px;
+        }
+        p:nth-of-type(2){
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>请输入您的手机号</p>
+    <input type="text" onblur="fn()">
+    <p>*格式有误</p>
+
+    <script>
+        // test()匹配字符串，如果匹配，返回true，如果不匹配，返回false
+        // 正则.test(字符串)
+        function fn(){
+            // 失焦时拿到文本框的内容
+            var txt = document.getElementsByTagName("input")[0].value;
+            var op = document.getElementsByTagName("p")[1];
+            // 写一个正则来进行判断
+            // var reg = /^1(3|4|5|6|7|8|9)\d{9}$/;        //手机号正则
+            var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+            if(!(reg.test(txt))){
+                // console.log("aaa");
+                op.style.display = "block";
+            }else{
+                // console.log("bbb");
+                op.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .banner {
+            width: 500px;
+            height: 600px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        li {
+            width: 500px;
+            height: 600px;
+            position: absolute;
+            display: none;
+        }
+
+        li>img {
+            width: 500px;
+            height: 600px;
+        }
+
+        button {
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            top: 240px;
+        }
+
+        button:nth-of-type(2) {
+            right: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul>
+            <li style="display: block;"><img src="1.jpg" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.jpg" alt=""></li>
+            <li><img src="5.jpg" alt=""></li>
+        </ul>
+        <button>
+            << /button>
+                <button>></button>
+    </div>
+
+
+    <script>
+        // 获取
+        var btn = document.getElementsByTagName("button");
+        var li = document.getElementsByTagName("li");
+        // 下标值
+        var index = 0;
+        btn[1].onclick = function () {
+            index++;
+            // 在找到需要显示的小姐姐之前，先将所有小姐姐隐藏
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.display = "none";
+            }
+            if (index > 4) {
+                index = 0;
+            }
+            li[index].style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>

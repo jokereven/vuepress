@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .cls2 {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div class="cls1"></div>
+
+    <script>
+        // 获取按钮
+        var btn = document.getElementsByTagName("button")[0];
+        var odiv = document.getElementsByTagName("div")[0];
+        // 点击事件    单击   onclick单击
+        btn.onclick = function () {
+            // alert("aaa");
+            // odiv.className = "cls2";
+            // console.log(odiv.className);
+            if (odiv.className == "cls1") {
+                odiv.className = "cls2";
+            } else {
+                odiv.className = "cls1";
+            }
+        }
+        // 判断div的class类名，如果点击的时候类名是cls1，那就变成cls2，如果是cls2的时候，点击让他变成cls1
+        // className多用于样式切换，切换class类名
+    </script>
+</body>
+
+</html>

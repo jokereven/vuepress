@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 数组方式push -->
+    <input type="text">
+    <button>添加</button>
+    <ul></ul>
+
+    <script>
+        // 数组方法
+        // 添加
+        // push()      在数组末尾进行添加
+        // var arr = [1,2,3];
+        // arr.push(45,78);
+        // console.log(arr);
+        // unshift()       在数组开头进行添加   和push用法一毛一样
+        // arr.unshift("M","a");
+        // console.log(arr);
+        // 删除
+        // pop()       删除数组的末尾元素
+        // arr.pop();
+        // console.log(arr);
+        // shift()      删除数组开头元素    和pop相反
+        // arr.shift();
+        // console.log(arr);
+
+        var arr = [1,2,3,4,5,6];
+        // splice()     两个值   第一个值代表第一个的位置，第二个值代表是删除个数
+        // console.log(arr.splice(0,2));
+        // arr.splice(0,2);
+        // console.log(arr);
+
+        // arr.splice(1,0,11,1111);        //0代表删除个数       11，1111代表的插入
+        // console.log(arr);
+
+        arr.splice(1,2,11,111);        //替换
+        console.log(arr);
+
+
+
+
+
+        // indexOf()    正序查找        lastIndexOf()   倒序查找
+        // 找到返回这个值的下标      找不到-1
+
+
+        // 截取
+        // slice()          不会修改原本的数组
+        // var arr = [1,2,3,4,5,6];
+        // console.log(arr.slice(1));
+        // console.log(arr.slice(1,3));
+        // console.log(arr);
+
+
+
+        // var ipt = document.getElementsByTagName("input")[0];
+        // var btn = document.getElementsByTagName("button")[0];
+        // var ul = document.getElementsByTagName("ul")[0];
+        // var arr = [];
+        // btn.onclick = function(){
+        //     arr.length = 0;
+        //     var txt = ipt.value;
+        //     arr.push(txt);
+        //     // console.log(arr);
+        //     for(var i=0;i<arr.length;i++){
+        //         var lis = document.createElement("li");
+        //         lis.innerHTML = arr[i];
+        //         ul.appendChild(lis);
+        //     }
+        // }
+    </script>
+</body>
+</html>

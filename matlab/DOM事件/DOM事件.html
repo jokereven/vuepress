@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            /* height: 200px; */
+            background: red;
+            transition: 0.5s;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button onclick="fn()">上拉</button>
+    <button onclick="fn1()">下拉</button>
+    <button onclick="fn2()">切换</button>
+    <div style="height: 200px;"></div>
+    <script>
+        // DOM事件模型
+        // 内联模型/事件属性模型,在标签里面绑定事件
+        // 动态绑定/动态事件分配
+        // DOM允许JavaScript向咱们的html元素分配事件，首先是获取元素，然后向元素分配事件
+        // 先获取按钮，然后给按钮绑定点击事件
+
+        // function fn(){
+        //     alert("aaa");
+        // }
+
+        var odiv = document.getElementsByTagName("div")[0];
+        // 上拉
+        function fn() {
+            // alert("aaaa");
+            odiv.style.height = "0px";
+        }
+        // 下拉0
+        function fn1() {
+            odiv.style.height = "200px";
+        }
+        // 一个按钮控制上拉和下拉
+        function fn2() {
+            // console.log(odiv.style.height);      //行内样式
+            // odiv.style.height = "200px";
+            if (odiv.style.height == "200px") {
+                odiv.style.height = "0px";
+            } else {
+                odiv.style.height = "200px";
+            }
+        }
+    </script>
+</body>
+
+</html>

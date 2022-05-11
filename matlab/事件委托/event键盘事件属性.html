@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>添加</button>
+    <ul></ul>
+    <script>
+        // 键码值
+        // document.addEventListener("keydown",function(event){
+            // 获取键码值
+            // keyCode
+            // 回车  空格
+            // 回车  13   空格32
+            // console.log(event.keyCode);
+        // },false)
+        var ipt = document.getElementsByTagName("input")[0];
+        var btn = document.getElementsByTagName("button")[0];
+        var ul = document.getElementsByTagName("ul")[0];
+        ipt.addEventListener("keydown",function(event){
+            event = event || window.event;
+            if(event.keyCode==13){
+                var li = document.createElement("li");
+                var txt = ipt.value;
+                li.innerHTML = txt;
+                ul.appendChild(li);
+            }
+        },false)
+        // btn.onclick = function(){
+            // var li = document.createElement("li");
+            // var txt = ipt.value;
+            // li.innerHTML = txt;
+            // ul.appendChild(li);
+        // }
+    </script>
+</body>
+</html>

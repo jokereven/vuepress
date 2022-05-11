@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        // 当鼠标在盒模型上按下，并且在文档里面移动的时候，让盒模型跟着鼠标去走，抬起以后，盒模型就不跟着鼠标走了
+        // 鼠标按下(div)，鼠标移动(document)，鼠标抬起(div)
+
+        var box = document.getElementsByTagName("div")[0];
+        // 创建一个开关
+        var bool = false;
+        var mx,my,bx,by;
+        box.onmousedown = function(event){
+            var event = event || window.event;
+            bool = true;
+            mx = event.clientX;
+            my = event.clientY;
+            bx = box.offsetLeft;
+            by = box.offsetTop;
+        }
+        document.onmousemove = function(event){
+            // console.log("aaa")
+            var event = event || window.event;
+            if(bool){
+                box.style.left = event.clientX-mx+bx+"px";
+                box.style.top = event.clientY-my+by+"px";
+                // 四边的判断
+                // 上边    top
+                // console.log(box.offsetTop);
+                if(box.offsetTop<=0){
+                    // 设置盒模型的top值
+                    box.style.top = 0;
+                }
+                if(box.offsetLeft<=0){
+                    box.style.left = 0;
+                }
+                // 右边
+                if(box.offsetLeft>document.documentElement.clientWidth-box.offsetWidth){
+                    box.style.left = document.documentElement.clientWidth-box.offsetWidth+"px";
+                }
+                // 下边
+                if(box.offsetTop>document.documentElement.clientHeight-box.offsetHeight){
+                    box.style.top = document.documentElement.clientHeight-box.offsetHeight+"px";
+                }
+                
+            }
+            
+        }
+        document.onmouseout = function(){
+            bool = false;
+        }
+        box.onmouseup = function(){
+            bool = false;
+        }
+
+        // 先分析了一下需要用到哪些知识点，哪些事件，并且这些事件都是给谁添加的
+        // 文档的鼠标移动事件，直接让盒模型跟着鼠标位置走
+        // 鼠标永远都在盒模型的左上角
+        // 写鼠标按下和鼠标抬起
+        // 怎么样来判断当前鼠标的状态，创建一个开关
+        // 通过这个开关，做一个最简单的拖拽效果
+        // 鼠标还是在原本盒模型的左上角，考虑的是，当鼠标按下的一瞬间，鼠标的位置，然后把这个位置在设置div位置的时候减掉
+        // 再次进行点击的时候，有偏差，在点击的时候也判断一下盒模型的位置，把这个位置也加上去
+        // 接下来考虑上下左右的判断，不允许超出整体文档
+        // 最后给整体文档一个鼠标移出事件，鼠标移出文档以后，把开关关掉，就完成了拖拽
+    </script>
+</body>
+</html>

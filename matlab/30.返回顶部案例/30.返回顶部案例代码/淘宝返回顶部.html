@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: block;
+        }
+        a{
+            width: 90px;
+            height: 90px;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            border: 1px solid gray;
+            text-align: center;
+            line-height: 90px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <img src="images/1.jpg" alt="" id="imgs"> -->
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+
+    <a href="#imgs">返回顶部</a>
+    <script>
+        var oa = document.getElementsByTagName("a")[0];
+        // 滚动条事件
+        window.onscroll = function(){
+            // console.log("aaaa");
+            // 操作文档
+            // console.log(document.documentElement.scrollTop);
+            if(document.documentElement.scrollTop>1800){
+                oa.style.display = "block";
+            }
+            else{
+                oa.style.display = "none";
+            }
+        }
+        oa.onclick = function(){
+            var timer = setInterval(function(){
+                var top = document.documentElement.scrollTop || document.body.scrollTop;
+                // 50可以理解为步长             步长在慢慢的减小
+                // top/10      当成步长
+                var temp = top/50;
+                document.documentElement.scrollTop = top-temp;
+                if(top<=0){
+                    clearInterval(timer);
+                }
+            },10)
+        }
+
+        // 刚开始的时候动的非常快，越到顶部的时候越来越慢
+
+        // 1000        100
+        // 900         90
+        // 810         81
+
+
+
+
+    </script>
+</body>
+</html>

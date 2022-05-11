@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <button>打开</button>
+    <button>关闭</button>
+    <p></p> -->
+
+    <!-- <button>点击</button> -->
+    <!-- <button>下一页</button> -->
+
+    <button>点击</button>
+
+    <script>
+        // js    ECMAScript    DOM   BOM
+        // DOM文档对象模型
+        // 操作文档内部的一些元素，属性，或者值
+        // BOM Browser Object Model     浏览器对象模型
+        // 操作浏览器         js对浏览器的各种操作的对象
+        // 粗俗的语言
+
+        // open(路径，指定窗口(新窗口，旧窗口)，窗口大小和位置)       打开
+        // 窗口操作
+        // _self 原窗口     _blank  新窗口
+        // document.getElementsByTagName("button")[0].onclick = function(){
+        //     window.open("https://www.baidu.com","_blank","width=400,height=400,top=100,left=100");
+        // }
+        // close()关闭
+
+        // document.getElementsByTagName("button")[0].onclick = function(){
+        //     newWin = window.open("https://www.baidu.com","_blank","width=400,height=400,top=100,left=100");
+        // }
+        // document.getElementsByTagName("button")[1].onclick = function(){
+        //     newWin.close();
+        // }
+
+
+        // navigator对象      了解即可
+        // 包含浏览器的信息
+        // appCodeName浏览器的代码名
+        // appName浏览器名称
+        // appVersion浏览器的平台和版本信息
+        
+        // txt = "浏览器代码名称："+navigator.appCodeName+"<br />";
+        // txt += "浏览器名称："+navigator.appName+"<br />";
+        // txt += "浏览器版本："+navigator.appVersion+"<br />";
+        // document.getElementsByTagName("p")[0].innerHTML = txt;
+
+        // Screen对象           获取屏幕的信息
+        // 尺寸
+        // screen.width     screen.height
+        // console.log(screen.width);
+        // console.log(screen.height);
+        // screen.availWidth
+        // screen.availHeight           不包括窗口任务栏
+        // console.log(screen.availWidth);
+        // console.log(screen.availHeight);
+
+        // History对象
+        // document.getElementsByTagName("button")[0].onclick = function(){
+        //     window.open("day29—测试.html","_self");
+        // }
+        // document.getElementsByTagName("button")[1].onclick = function(){
+            // history.forward();
+            // history.go(0)
+        // }
+
+
+        // location对象   获取当前页面的地址,并把浏览器重新定向到一个新的页面
+        // 翻译成人话，就是进行赋值，和open类似
+        
+        // document.getElementsByTagName("button")[0].onclick = function(){
+        //     window.location.href = "https://mi.com";
+        // }
+        // 刷新页面
+        // document.getElementsByTagName("button")[0].onclick = function(){
+            // window.location.href = window.location.href;
+            // window.location.reload();
+        // };
+
+        // 工作区域尺寸
+        
+    </script>
+</body>
+</html>

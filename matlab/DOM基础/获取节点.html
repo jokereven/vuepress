@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <p>这是我的p</p>
+    <p id="p1">这是我的第二个p</p>
+    <span>这是我的span1</span>
+    <span class="sps">这是我的span2</span>
+    <span class="sps">这是我的span3</span>
+    <div style="width: 50px;height: 50px;background-color: red;"></div>
+    <div style="width: 50px;height: 50px;background-color: red;"></div>
+    <div style="width: 50px;height: 50px;background-color: red;"></div>
+    <div style="width: 50px;height: 50px;background-color: red;"></div>
+    <div style="width: 50px;height: 50px;background-color: red;"></div> -->
+
+
+    <ul>
+        <li class="lis">1</li>
+        <li class="lis">2</li>
+        <li class="lis">3</li>
+        <li class="lis">4</li>
+        <li class="lis">5</li>
+    </ul>
+    <ol>
+        <li class="lis1">1</li>
+        <li class="lis1">2</li>
+        <li class="lis1">3</li>
+        <li class="lis1">4</li>
+        <li class="lis1">5</li>
+    </ol>
+    <!-- 获取两组数据，ul下面的li是一组，ol下面的li是一组 -->
+
+    <script>
+        // 获取元素节点
+        // 3种方法
+        // 通过id获取
+        // 通过class类名来获取
+        // 通过标签名获取
+        // var p1 = document.getElementById("p1");      //通过id获取
+        // console.log(p1);
+
+        // var osp = document.getElementsByTagName("span");     //通过标签名字获取
+        // console.log(osp);
+        // 如果想要对一组数据进行操作的话，需要遍历   for
+        // 想要对某一个进行操作的话，就需要用下标
+        // console.log(osp[0]);
+
+        // var sps = document.getElementsByClassName("sps");
+        // console.log(sps);
+        // console.log(sps[0]);
+
+        // var odiv = document.getElementsByTagName("div")[0];
+        // console.log(odiv);
+        // 如果通过标签名或者class名获取元素，即使页面上只有一个，想要操作这一个的话，也需要加下标值
+
+        // var odiv = document.getElementsByTagName("div");
+        // console.log(odiv);
+        // 变量名字
+
+        // var div = document.getElementsByTagName("div");
+        // console.log(div);
+
+        // var oli = document.getElementsByTagName("li");
+        // console.log(oli);
+
+        // var oul = document.getElementsByTagName("ul")[0];
+        // var ool = document.getElementsByTagName("ol")[0];
+        // console.log(ul)
+        // console.log(ol)
+        // var ul_li = oul.getElementsByTagName("li");
+        // var ol_li = ool.getElementsByTagName("li");
+        // console.log(ul_li);
+        // console.log(ol_li);
+        
+        // var oul = document.getElementsByTagName("ul")[0];
+        // console.log(oul);
+
+        // 只操作一个元素的时候写下标
+        // 如果想操作一组数据，需要用到for循环
+    </script>
+</body>
+</html>

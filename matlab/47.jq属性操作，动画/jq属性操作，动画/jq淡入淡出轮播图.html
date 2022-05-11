@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul>li{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        button{
+            width: 30px;
+            height: 50px;
+            background: none;
+            border: 1px solid gray;
+            position: absolute;
+            top: 175px;
+            color: white;
+            font-size: 22px;
+        }
+        button:nth-of-type(2){
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li style="display: block;"><img src="1.jpg" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.jpg" alt=""></li>
+        </ul>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <button><</button><button>></button>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        var index = 0;
+        var timer;
+        $("button:last").click(function(){
+            index++;
+            if(index>$("ul>li").length-1){
+                index = 0;
+            }
+            // console.log($("ul>li").length);
+            $("ul>li").eq(index).stop(true,true).fadeIn(500).siblings().fadeOut(500);
+        })
+        $("button:first").click(function(){
+            index--;
+            if(index<0){
+                index = $("ul>li").length-1;
+            }
+            // console.log($("ul>li").length);
+            $("ul>li").eq(index).stop(true,true).fadeIn(500).siblings().fadeOut(500);
+        })
+        var bian = function(){
+            index++;
+            if(index>$("ul>li").length-1){
+                index = 0;
+            }
+            // console.log($("ul>li").length);
+            $("ul>li").eq(index).stop(true,true).fadeIn(500).siblings().fadeOut(500);
+        }
+        timer = setInterval(bian,2500);
+        $("div").hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer = setInterval(bian,2500);
+        })
+
+        // 点击的圆点的下标
+        // index()          获取下标
+        $("ol>li").click(function(){
+            $(this).index();        //获取点击圆点的下标
+        })
+    </script>
+</body>
+</html>

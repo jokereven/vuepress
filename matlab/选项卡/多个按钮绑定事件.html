@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 多个按钮绑定事件 -->
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+    <script>
+        // 操作一组数据就需要用到for循环
+        var btn = document.getElementsByTagName("button");
+        for (var i = 0; i < btn.length; i++) {
+
+            // 手动保存变化的i值
+            // 需要找到所有的按钮，给所有的按钮增加一个自定义的属性
+            // .属性          index自己去设置的，其他的也可以
+            // 关键代码
+            btn[i].index = i;
+
+            // btn[i]代表所有的按钮
+            btn[i].onclick = function () {
+                // alert("aaaa");
+
+                // 点击按钮的时候弹出每个按钮所对应的下标值
+                // alert(i);
+                // this    这个     目前只在事件里面去用
+                // console.log(this);
+                // 在事件里面，this代表的是事件源
+                // 由谁来触发，this就是谁
+                // 不会保存里面所变化的i值
+                // 我的事件可以正常去绑定，但是变化的i值没有保存下来
+
+                // 当前操作按钮的index就可以
+                console.log(this.index);
+            }
+        }
+    </script>
+</body>
+
+</html>

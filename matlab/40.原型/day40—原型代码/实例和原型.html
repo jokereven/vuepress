@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 当我们读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性
+        // 案例
+        function Person(){
+        }
+        // 原型属性
+        // person.__proto__ = Person.prototype
+        Person.prototype.name = "小新";
+        // 实例化
+        var person = new Person();
+        // console.log(person.name);
+        person.name = "王宁宁";
+        // console.log(person.name);
+        //  delete删除
+        // delete person.name;
+        // console.log(person.name);
+        // 跳过实例，直接去找原型
+        console.log(person.__proto__.name);     //小新
+        // 原型也是一个对象，既然是对象，就也可以用最原始的方式创建他，new Object()
+
+        // var obj = new Object();
+        // obj.name = "张智博";
+        // console.log(obj.name);
+    </script>
+</body>
+</html>

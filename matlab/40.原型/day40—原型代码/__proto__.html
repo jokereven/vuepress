@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // __proto__(双下划线)
+        // 每一个对象都会有的属性，叫做__proto__，这个属性会指向该对象的原型
+        // 案例
+        function Person(){
+
+        }
+        var person = new Person();
+        // person.__proto__ === Person.prototype
+        console.log(person.__proto__ === Person.prototype);     //true   成立
+    </script>
+</body>
+</html>

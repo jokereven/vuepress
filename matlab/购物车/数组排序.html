@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // sort()排序     冒泡排序
+        // sort()用于对数组的元素进行排序，从大到小，或者从小到大
+        // var arr = [5,4,8,2,6,3,7,1,2];
+        // arr.sort();     //括号内部不写东西，默认升序，从小到大
+        // console.log(arr);
+        // arr.sort(function(a,b){
+            // 给函数一个返回值
+            // return a-b;
+        // })
+        // console.log(arr);
+        // arr.sort(function(a,b){
+            // 给函数一个返回值
+            // return b-a;
+        // })
+        // console.log(arr);
+        // 数组排序的一种方式
+        // 不要纠结为什么叫，只需要知道里面的实现规律就可以
+        var arr = [5,8,6,2,3,1,4];
+        // i     i+1
+        // 0 1 2 3 4 5 6
+        // 0       0 1     i    i+1
+        // 1       1 2     i    i+1
+        // 5       5 6     i    i+1
+        // 进行一次循环，循环arr.length-1
+        for(var j = 0;j < arr.length; j++){
+
+
+            for(var i = 0; i < arr.length-1; i++){
+                // 判断下标值i和i+1的大小，如果想做升序，大的放后边，降序，小的放后边
+                if(arr[i]>arr[i+1]){
+                    // 第三方变量/第三者
+                    var num = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = num;
+                    // i   前    i+后
+                    // 大的值放到后面   升序
+                }
+            }
+        }
+        console.log(arr);
+
+
+        // 5   8   6   2   3   1   4
+        // 0       5<8     不动
+        // 1       8>6     调换        5   6   8   2   3   1   4
+        // 2       8>2     调换        5   6   2   8   3   1   4
+        // 3       8>3     调换        5   6   2   3   8   1   4
+        // 4       8>1     调换        5   6   2   3   1   8   4
+        // 5       8>4     调换        5   6   2   3   1   4   8
+    </script>
+</body>
+</html>

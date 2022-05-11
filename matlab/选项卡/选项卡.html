@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        ul{
+            display: flex;
+        }
+        li{
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid gray;
+        }
+        div{
+            width: 606px;
+            height: 606px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div style="background-color: red;display: block;"></div>
+    <div style="background-color: green;"></div>
+    <div style="background-color: pink;"></div>
+
+
+    <script>
+        // 获取元素
+        var li = document.getElementsByTagName("li");
+        var div = document.getElementsByTagName("div");
+        // 给三个li绑定点击事件
+        for(var i=0;i<li.length;i++){
+
+            // 手动保存每次变化的i值
+            li[i].aaa = i;
+            li[i].onclick = function(){
+                // alert("aa");
+                // 获取到点击的li的下标值
+                // console.log(this.aaa);
+
+                // 在找到需要显示的div之前先将所有div隐藏掉
+                for(var j = 0;j<div.length;j++){
+                    div[j].style.display = "none";
+                }
+
+                div[this.aaa].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

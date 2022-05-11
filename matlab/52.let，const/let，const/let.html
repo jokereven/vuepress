@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+    <script>
+        // es6新增let命令，用来声明变量,用法类似var
+        // {
+            // var index1 = "刘玉林";
+            // let index2 = "林清玄";
+        // }
+        // console.log(index1);
+        // console.log(index2);
+        // 找不到index2，let所声明的变量，只在let命令所在的代码块内有效
+
+        // let的实际用法，会经常应用到的地方
+        // for循环
+        // for(let i = 0;i < 10; i++){
+
+        // }
+        // console.log(i);
+        // for(var i=0;i<10;i++){
+
+        // }
+        // console.log(i)
+
+        // var arr = [];
+        // for(var i=0;i<10;i++){
+        //     arr[i] = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // arr[5]();
+        // 变量i在全局范围内都有效
+        // 只有一个变量i，每一次循环，i值也随之变化，i指向全局，导致最后运行结果是最后一轮的i值，也就是10
+        // 5个按钮，点击的时候弹出所对应的下标值
+        // 自定义属性保存变化的变量
+        // var arr = [];
+        // for(let i=0;i<10;i++){
+        //     arr[i] = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // arr[6]();
+        // let声明的变量，只在当前的循环内有效，每一次循环的i值其实都是一个全新的变量
+        // for(let i=0;i<3;i++){
+        //     let i = "abc";
+        //     console.log(i);
+        // }
+        // 内部的i变量和循环的i变量不在同一个作用域，都有各自的
+
+        // 不存在变量提升
+        // var会有一个变量提升的现象
+        // var index;
+        // console.log(index);
+        // var index = 1;
+        // 变量可以在声明之前使用，值是undefined
+        // let改变语法行为
+        // 一定是先声明，在使用，否则就报错
+        // console.log(index);
+        // let index = 1;
+        // 暂时性死区
+        // var index = "扣个脚";
+        // if(true){
+        //     index = "好家伙";
+        //     let index;
+        //     // console.log(index);     //报错
+        // }
+        // console.log(index);
+        // 报错
+        // 不允许重复声明
+        // function fn(){
+        //     let index1 = "杨晨光";
+        //     var index1 = "萧然";
+        // }
+        // function fn(){
+        //     let txt = "锤子";
+        //     let txt = "高锋";
+        // }
+
+        // var btns = document.getElementsByTagName("button");
+        // for(let i = 0; i < btns.length; i ++){
+        //     btns[i].onclick = function(){
+        //         console.log(i);
+        //         alert(i);
+        //     }
+        // }
+    </script>
+</body>
+</html>

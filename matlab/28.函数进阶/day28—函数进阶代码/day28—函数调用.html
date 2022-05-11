@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this一块去学         这个
+        // 1.函数模式调用      函数名()
+        // var ming = "光头强";
+        // function show(a){
+        //     console.log(a);
+        //     console.log(this);
+        //     console.log(this.ming);
+        // }
+        // show(ming);
+        // console.log(window.ming);
+        // show    函数本身   光头强     window     document
+        // 函数模式调用的时候，this就是window
+
+        // 2.方法模式调用           当函数体在对象里面      .方法()
+        // var ming = "侯旭";
+        // var obj = {
+        //     "ming":"林清玄",
+        //     "aihao":"吃我一拳",
+        //     "sayName":function(){
+        //         console.log("aaa");
+        //         console.log(this);      //obj    sayName
+        //         console.log(this.ming);
+        //         console.log(ming);
+        //     }
+        // }
+        // obj.sayName();              //举例：event.stopPropagation()
+        // 方法模式调用里面，this就是调用者
+
+
+        // 面试题
+        // var person = {
+        //     "ming":"熊大",
+        //     "sayName":function(){
+        //         var person1 = {
+        //             "ming":"熊二",
+        //             "sayName":function(){
+        //                 console.log(this.ming);
+        //             }
+        //         }
+        //         person1.sayName();
+        //         console.log(this.ming);
+        //     }
+        // }
+        // person.sayName();
+
+        // 不成文的规定，构造函数首字母大写
+        // function Person(){
+        //     console.log("aaa");
+        // }
+        // var xcm = new Person();         //实例化
+        // xcm();           //简单挖了一个
+
+        // function Person(ming,age){
+        //     this.ming = ming;
+        //     this.age = age;
+        //     this.say = function(){
+        //         // console.log("aaa");
+        //         console.log(this);
+        //     }
+        // }
+        // var xcm = new Person("熊二","3");
+        // xcm.say();
+
+
+
+
+
+        // 固定的几种方式
+        // 面试的时候用处挺大
+
+
+        // call    apply调用
+
+
+        // 面向对象
+        // 先了解即可
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ECMA    DOM   BOM -->
+    <button>开始倒计时</button>
+    <p>10</p>
+    <script>
+        // 定时器
+        // setInterval         
+        // 清除定时器
+        // clearInterval
+        // setInterval(function(){},时间)
+        // 在给定的时间段，反复执行内部的代码
+        // setInterval(function(){
+        //     document.write("aaaa"+"<br />");
+        // },1000)
+        // 倒计时    时间   毫秒
+
+        // 10 9 8 7 6 5 4 3 2 1
+
+        // 生命周期
+        // 局部变量生命周期到所在函数体运行以后就被删除
+
+        // var index = 10;
+        // var timer = setInterval(function(){
+        //     index--;
+        //     if(index==0){
+        //         clearInterval(timer);
+        //         alert("倒计时结束啦");
+        //     }
+        //     document.write(index+"<br />");
+        // },500);
+
+
+        // 距离放假的倒计时
+        // 手动刷新，浓浓的自助精神
+
+        // 获取按钮和p标签
+        // var btn = document.getElementsByTagName("button")[0];
+        // var op = document.getElementsByTagName("p")[0];
+        // var timer;
+        // 绑定点击事件
+        // btn.onclick = function(){
+            // alert("aaa");
+            // 获取p标签里面的文本内容
+            // op.innerHTML = op.innerHTML - 1;
+            // op.innerHTML -= 1
+            // op.innerHTML--;
+            // 选择一种你中意的方式
+            // 自动倒计时    定时器
+        //     timer = setInterval(function(){
+
+        //         // 判断
+        //         if(op.innerHTML==1){
+        //             clearInterval(timer);
+        //         }
+        //         op.innerHTML--;
+        //     },500);
+        // }
+
+        // 课下的时候把自己认为的其他方式都试一下
+        // Math.random()
+    </script>
+</body>
+</html>

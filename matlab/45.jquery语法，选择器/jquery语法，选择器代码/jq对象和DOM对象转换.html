@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>这是我的p</p>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // jquery对象就是jquery包装DOM对象后产生的对象
+        // jquery对象是jquery独有的，js里面的方法不可以应用
+        // DOM对象不可以应用jq里面的方法，比如html(),css(),val()
+
+        // DOM对象转换成jq对象
+        // 只需要在DOM对象外面用$()包裹起来就可以       比如$(DOM对象)
+        // var op = document.getElementsByTagName("p")[0]
+        // $(op).css("color","red");
+
+        // jq对象转换成DOM对象
+        var op = $("p").get(0);
+        // console.log(op.innerHTML);
+        // 通过get()方法，得到相应的DOM对象
+        console.log(op.innerHTML);
+    </script>
+</body>
+</html>

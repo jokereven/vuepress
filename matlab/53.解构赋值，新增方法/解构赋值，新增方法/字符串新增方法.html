@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // includes() startsWith() endsWith()
+        // includes()返回布尔值，表示是否找到了参数字符串
+        // startsWith()返回布尔值，表示参数字符串是否在原字符串头部/开始的位置
+        // endsWith()返回布尔值，表示参数字符串是否在原字符串尾部/结束的位置
+        var str = "Hello World!";
+        // console.log(str.includes("o"));
+        // console.log(str.includes("a"));
+        // console.log(str.indexOf("o"))
+        // console.log(str.startsWith("Hello"));
+        // console.log(str.endsWith("ld!"));
+        // 都支持第二个参数
+        // 第二个参数表示开始搜索的位置
+        // console.log(str.includes("o",5));
+        // repeat()方法返回一个新字符串，表示将原字符重复多少次
+        // console.log(str.repeat(2.3));       //2
+        // console.log(str.repeat(2.9));       //2
+        // es2017引入的方法
+        // 补全字符串长度的功能
+        // padStart() 从头部补全     padEnd()   从尾部补全
+        // console.log("x".padStart(5,"abc"));             //abcax
+        // console.log("x".padEnd(6,"ab"));            //xababa
+        // es2019对字符串新增的方法
+        // .trim()      取消空格   .trimStart()   .trimEnd()
+        // console.log("           aaa         bbb         ccc      ".trim());
+        console.log("           aaa         bbb         ccc      ".trimStart());
+        console.log("           aaa         bbb         ccc      ".trimEnd());
+    </script>
+</body>
+</html>

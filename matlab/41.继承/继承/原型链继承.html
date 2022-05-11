@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型链继承
+        // 核心：将父类的实例作为字类的原型
+        // 缺点：父类新增原型方法/属性，字类都可以访问到，父类一变，其他的都变了
+        // 案例
+        function Person(name){
+            this.name = name;
+        }
+        Person.prototype.getName = function(){
+            return this.name;
+        }
+        // var person = new Person("aaa");
+        // console.log(person.getName());
+        // 新的构造函数
+        function Parent(age){
+            this.age = age;
+        }
+        Parent.prototype = new Person("小新");      //关键  通过构造函数创建一个新的对象，并赋值给新构造函数的原型
+        Parent.prototype.getAge = function(){
+            return this.age;
+        }
+        Parent.prototype.getName = function(){
+            return "测试";
+        }
+        var parent = new Parent(18);
+        console.log(parent.getAge());
+        console.log(parent.getName());
+
+    </script>
+</body>
+</html>

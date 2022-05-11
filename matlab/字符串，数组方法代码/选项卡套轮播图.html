@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        /* css样式 */
+        .content{
+            width: 1000px;
+            height: 400px;
+            margin: 100px auto;
+            /* background: red; */
+            position: relative;
+            /* z-index: 999; */
+        }
+        .nav{
+            width: 150px;
+            height: 400px;
+            /* background:green; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            position: absolute;
+            z-index: 1;
+            background: rgba(0,0,0,0.4);
+            color: rgb(200,200,200);
+        }
+        .nav>li{
+            width: 100%;
+            height: 140px;
+            line-height: 135px;
+        }
+        .nav>li:hover{
+            background: rgba(218, 60, 60, 0.1);
+            cursor: pointer;
+        }
+        .banner{
+            width: 1000px;
+            height: 400px;
+            /* position: absolute; */
+            /* top: 0; */
+            /* left: 0; */
+            display: none;
+        }
+        .banner>img{
+            width: 1000px;
+            height: 400px;
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        ol{
+            width: 100%;
+            height: 15px;
+            display: flex;
+            justify-content: space-around;
+            z-index: 999;
+            position: absolute;
+            bottom: 20px;
+            box-sizing: border-box;
+            padding: 0 300px;
+        }
+        ol>li{
+            width: 15px;
+            height: 15px;
+            background: gray;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul class="nav">
+            <li>英雄联盟</li>
+            <li>小米内容</li>
+            <li>王者荣耀</li>
+        </ul>
+        <div class="banner" style="display: block;">
+            <img src="images/1.jpeg" alt="" style="opacity: 1;">
+            <img src="images/2.jpeg" alt="">
+            <img src="images/3.jpeg" alt="">
+            <ol>
+                <li style="background: red;"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        // 二维数组
+        var img_src = [
+            // 三组数据
+            ["images/1.jpeg","images/2.jpeg","images/3.jpeg"],
+            ["images/11.jpg","images/22.jpg","images/33.jpg"],
+            ["images/111.jpeg","images/222.jpeg","images/333.jpeg"]
+        ]
+        // 第一步获取
+        var content = document.getElementsByClassName("content")[0];
+        var banner = document.getElementsByClassName("banner")[0];
+        var imgs = banner.getElementsByTagName("img");
+        var ul = document.getElementsByTagName("ul")[0];
+        var ul_li = ul.getElementsByTagName("li");
+        var ol = document.getElementsByTagName("ol")[0];
+        var ol_li = ol.getElementsByTagName("li");
+        var timer;
+        var zhi = 0;
+        for(var i=0;i<ul_li.length;i++){
+            // 手动保存变化i值
+            ul_li[i].index = i;
+            ul_li[i].onclick = function(){
+                // alert("aa");
+                // console.log(this.index);
+                // console.log(img_src[this.index]);
+                for(var j = 0;j<img_src[this.index].length;j++){
+                    // console.log(img_src[this.index][j]);
+                    // 修改属性值
+                    imgs[j].src = img_src[this.index][j]
+                }
+            }
+        }
+        timer = setInterval(function(){
+            zhi++;
+            for(var i=0;i<imgs.length;i++){
+                imgs[i].style.opacity = 0;
+                ol_li[i].style.background = "gray";
+            }
+            if(zhi>imgs.length-1){
+                zhi = 0;
+            }
+            imgs[zhi].style.opacity = 1;
+            ol_li[zhi].style.background = "red";
+        },2000)
+        content.onmouseover = function(){
+            // console.log("aa")
+            clearInterval(timer);
+            
+        }
+        content.onmouseout = function(){
+            // console.log("bb")
+            timer = setInterval(function(){
+            zhi++;
+                for(var i=0;i<imgs.length;i++){
+                    imgs[i].style.opacity = 0;
+                    ol_li[i].style.background = "gray";
+                }
+                if(zhi>imgs.length-1){
+                    zhi = 0;
+                }
+                imgs[zhi].style.opacity = 1;
+                ol_li[zhi].style.background = "red";
+            },2000)
+        }
+    </script>
+</body>
+</html>

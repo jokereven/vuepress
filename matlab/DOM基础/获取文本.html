@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        这是我的div
+        <span>这是我的span</span>
+    </div>
+    <input type="text" value="爱国i瓦工">
+
+    <script>
+        // 获取文本的方式
+        // innerHTML   innerText   outerHTML   outerText   value
+        // 想要获取文本，先要获取元素
+        // var osp = document.getElementsByTagName("span")[0];
+        // console.log(osp);
+        // console.log(osp.innerHTML);
+        // osp.innerHTML = "这是我修改后的内容";
+        // var odiv = document.getElementsByTagName("div")[0];
+        // console.log(odiv.innerHTML);        //包含嵌套标签
+        // console.log(odiv.innerText);        //不包含嵌套标签
+        // var osp = document.getElementsByTagName("span")[0];
+        // console.log(osp.outerHTML);          //包含
+        // console.log(osp.outerText);          //不包含
+        // console.log(odiv.outerHTML);
+        // console.log(odiv.outerText);
+        // 通常用inner
+        // var input = document.getElementsByTagName("input")[0];
+        // console.log(input.value);
+        // value是表单，其他的是正常元素的文本
+    </script>
+</body>
+</html>

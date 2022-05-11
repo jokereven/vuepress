@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 1000px;
+            height: 270px;
+            border: 1px solid lightgreen;
+            margin: 0 auto;
+            position: relative;
+        }
+        #box>input{
+            width: 90%;
+            height: 200px;
+            position: absolute;
+            left: 5%;
+            border: 1px solid lightgreen;
+        }
+        #box>p{
+            width: 90%;
+            height: 40px;
+            position: absolute;
+            left: 5%;
+            margin-top: 5px;
+            border: 1px solid lightgreen;
+            bottom: 10px;
+        }
+        #box>p>button{
+            float: right;
+            margin-right: 5px;
+            width: 120px;
+            height: 40px;
+            border: 1px solid lightpink;
+            background: lightpink;
+            color: white;
+        }
+        ul{
+            width: 1000px;
+            height: auto;
+            margin: 20px auto;
+        }
+        ul>li{
+            width: 1000px;
+            border-bottom: 1px dashed gray;
+            margin-top: 20px;
+        }
+        li>div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 50px;
+        }
+        li>div>img{
+            width: 50px;
+            height: 50px;
+        }
+        li>p{
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+        ul>li>p>span:nth-of-type(1){
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="txt">
+        <p><button id="tj">添加</button></p>
+    </div>
+    <ul>
+        <li>
+            <div>
+                <img src="1.jpg">
+                <span>不是已经实线了么。咋又整个虚线</span>
+                <button class="dels">删除</button>
+            </div>
+            <p>评论：0 <span>点赞：<span class="dz">0</span></span></p>
+        </li>
+    </ul>
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        
+        $("#tj").click(function(){
+            var txt = $("#txt").val();
+            var lis = $("<li></li>");
+            var divs = $("<div></div>");
+            var imgs = $("<img></img>");
+            imgs.attr("src","2.jpg");
+            var sp1 = $("<span></span>");
+            sp1.html(txt);
+            var btns = $("<button class='dels'>删除</button>");
+            var ps = $("<p>评论：0 </p>");
+            var sp2 = $("<span class='dzs'>点赞：</span>");
+            var sp3 = $("<span class='dz'>0</span>");
+            imgs.appendTo(divs)
+            sp1.appendTo(divs)
+            btns.appendTo(divs)
+            sp3.appendTo(sp2);
+            sp2.appendTo(ps);
+            divs.appendTo(lis)
+            ps.appendTo(lis)
+            lis.appendTo($("ul"));
+
+
+            // 点赞
+            $(".dzs").click(function(){
+                // alert("aaa");
+                // console.log($(this).children("span").html())
+                // $(this).children("span").html()+=1;
+                // console.log($(this).children("span").html());
+                // num ++;
+                // $(this).children("span").html(num)
+                // console.log(num);
+                // $(this).children("span").html(Math.floor($(this).children("span").html())+1)
+                // console.log($(this).children("span").html())
+                // index = $(this).children("span").html();
+                // $(this).children("span").html(index++);
+                // var index = 0;
+                // index++
+                // $(this).children("span").html(index);
+                console.log($(this));
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        th,
+        td {
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid gray;
+        }
+
+        .chColor1 {
+            background: rgb(240, 128, 128);
+        }
+
+        .chColor2 {
+            background: rgb(176, 235, 235);
+        }
+
+        .find_color1 {
+            background: #096;
+        }
+
+        .find_color2 {
+            background: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 1.表格添加功能
+    2.隔行变色
+    3.单行删除
+    4.全选功能
+    5.反选
+    6.全部删除
+    7.选中删除
+    8.查找
+    9.修改 -->
+
+    <h1 style="margin-bottom: 20px;">表格增删改查</h1>
+    姓名：<input type="text" id="xm">
+    年龄：<input type="text" id="nl">
+    爱好：<input type="text" id="ah">
+    <button id="tj">添加</button>
+    <button id="btn_rev">反选</button>
+    <button id="del_all">全部删除</button>
+    <button id="del_little">选中删除</button>
+    <input type="text" id="ipt_find">
+    <button id="btn_find">查找</button>
+    <table style="margin-top: 20px;">
+        <thead style="background: rgb(240, 128, 128);">
+            <th><input type="checkbox" id="fxk"></th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>爱好</th>
+            <th>操作</th>
+        </thead>
+    </table>
+
+    <script>
+        // 表格添加功能
+        // 获取元素
+        var xm = document.getElementById("xm");
+        var nl = document.getElementById("nl");
+        var ah = document.getElementById("ah");
+        var tj = document.getElementById("tj");
+        var tab = document.getElementsByTagName("table")[0];
+        // 绑定点击事件
+        tj.onclick = function () {
+            // 保存姓名，年龄，爱好框的值
+            var xm_txt = xm.value;
+            var nl_txt = nl.value;
+            var ah_txt = ah.value;
+            // 创建节点,5个td，1个tr
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+            var td5 = document.createElement("td");
+            var tr = document.createElement("tr");
+            // 添加节点
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+            tab.appendChild(tr);
+
+            // 设置每一个td的内容
+            td1.innerHTML = "<input type='checkbox' class='fxks'>";
+            td2.innerHTML = xm_txt;
+            td3.innerHTML = nl_txt;
+            td4.innerHTML = ah_txt;
+            td5.innerHTML = "<button class='del'>删除</button>"
+
+            // 调用隔行变色
+            changeColor();
+
+            // 单行删除
+            // 获取删除按钮，通过class类名来获取
+            var del = document.getElementsByClassName("del");
+            for (var i = 0; i < del.length; i++) {
+                // 绑定事件
+                del[i].onclick = function () {
+                    this.parentNode.parentNode.remove();
+                    changeColor();
+                }
+            }
+
+
+            // 全选
+            var fxk = document.getElementById("fxk");
+            fxk.onclick = function () {
+                var fxks = document.getElementsByClassName("fxks");
+                // 遍历fxks
+                for (var i = 0; i < fxks.length; i++) {
+                    fxks[i].checked = fxk.checked;
+                }
+            }
+
+
+            // 反选
+            var btn_rev = document.getElementById("btn_rev");
+            btn_rev.onclick = function () {
+                var fxks = document.getElementsByClassName("fxks");
+                for (var i = 0; i < fxks.length; i++) {
+                    // 判断所有复选框的选中状态，如果是选中，设置成未选中，如果是未选中，设置成选中
+                    if (fxks[i].checked) {
+                        fxks[i].checked = false;
+                    } else {
+                        fxks[i].checked = true;
+                    }
+                }
+            }
+
+
+            // 全部删除
+            var del_all = document.getElementById("del_all");
+            del_all.onclick = function () {
+                var trs = document.getElementsByTagName("tr");
+                for (var i = 1; i < trs.length; i++) {
+                    trs[i].remove();
+                    // 保证每一次删除都是从下标值是1开始
+                    i--;
+                }
+            }
+
+
+            // 选中删除
+            var del_little = document.getElementById("del_little");
+            del_little.onclick = function () {
+                var fxks = document.getElementsByClassName("fxks");
+                for (var i = 0; i < fxks.length; i++) {
+                    if (fxks[i].checked) {
+                        fxks[i].parentNode.parentNode.remove();
+                        i--;
+                        changeColor();
+                    }
+                }
+            }
+
+
+            // 查找
+            var ipt_find = document.getElementById("ipt_find");
+            var btn_find = document.getElementById("btn_find");
+            btn_find.onclick = function () {
+                var txt = ipt_find.value;
+                var tds = document.getElementsByTagName("td");
+
+                for (var i = 0; i < tds.length; i++) {
+                    if (tds[i].innerHTML == txt) {
+                        for (var j = 0; j < tds.length; j++) {
+                            tds[j].parentNode.className = "find_color2";
+                        }
+                        tds[i].parentNode.className = "find_color1";
+                    } else {
+
+                    }
+                }
+            }
+
+
+
+        }
+
+
+
+
+        // 隔行变色
+        function changeColor() {
+            var trs = document.getElementsByTagName("tr");
+            // 遍历tr
+            for (var i = 0; i < trs.length; i++) {
+                // 判断单数行或者偶数行
+                if (i % 2 == 0) {
+                    trs[i].className = "chColor1";
+                } else {
+                    trs[i].className = "chColor2";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

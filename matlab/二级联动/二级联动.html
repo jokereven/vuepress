@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="one">
+        <option value="">————请选择————</option>
+        <option value="0">————广东省————</option>
+        <option value="1">————河南省————</option>
+        <option value="2">————北京市————</option>
+        <option value="3">————湖北省————</option>
+        <option value="4">————湖南省————</option>
+        <option value="5">————山西省————</option>
+        <option value="6">————四川省————</option>
+        <option value="7">————陕西省————</option>
+    </select>
+    <select name="" id="two">
+        <option value="">————请选择————</option>
+    </select>
+    <select name="" id="">
+        <option value="">————请选择————</option>
+    </select>
+
+    <script>
+        // 创建节点，添加节点，二维数组，onchange
+        // 创建二维数组
+        // [1,2,3,4,56];     一维数组
+        // [
+        //     [],
+        //     [],
+        //     []
+        // ]                二维数组
+        var arr = [
+            ["广州市","佛山市","珠海市","深圳"],
+            ["郑州","新乡","安阳","洛阳"],
+            ["朝阳区","通州区","昌平区","海淀区"],
+            ["武汉市","襄阳市","荆州市","贺州市"],
+            ["长沙市","株洲市","湘潭市","岳阳市"],
+            ["太原市","吕梁市","大同市","临汾市"],
+            ["成都","重庆","广汉"],
+            ["西安","宝鸡","咸阳","汉中"]
+        ]
+
+        // 三维数组放区
+        // 有一个变量，将三维数组转换成二维数组
+
+
+        // 获取元素
+        var one = document.getElementById("one");
+        var two = document.getElementById("two");
+        one.onchange = function(){
+            // console.log(this.value);
+            // console.log(arr[this.value]);
+            // 全部遍历，创建节点，再添加进去
+            two.length = 1;     //最简单的，最直接的
+            // two.childNodes       筛选     option     只留下第一个option
+
+            for(var i = 0; i < arr[this.value].length; i++){
+                // console.log(arr[this.value][i]);
+                // 创建节点
+                var op = document.createElement("option");
+                op.innerHTML = "————"+arr[this.value][i]+"————";
+                two.appendChild(op);
+            }
+        }
+    </script>
+</body>
+</html>

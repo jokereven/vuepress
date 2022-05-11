@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>隐藏</button>
+    <button>显示</button>
+    <button>显示/隐藏</button>
+    <div style="width: 200px;height: 200px;background: pink;"></div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // hide(时间)    隐藏
+        // $("button:first").click(function(){
+        //     $("div").hide(300);
+        // })
+        // $("button").eq(1).click(function(){
+        //     $("div").show(300);
+        // })
+        // $("button:last").click(function(){
+        //     $("div").stop(true,true).toggle(500);      //自动判断当前盒模型状态，如果显示，就隐藏掉，如果隐藏，就显示
+        // })
+        // 不加stop，点击多少次，执行多少次
+        // stop(true/false,true/false)停止动画
+        // 第一个参数：清空队列，可以立即结束动画
+        // 第二个参数：让当前正在执行的动画立即完成
+
+        // delay()     延时动画
+        // $("button").click(function(){
+        //     $("div").delay(1000).hide(1000);
+        // })
+
+
+        // slideDown      slideUp               上拉下拉
+        // $("button:first").click(function(){
+        //     $("div").slideUp(500);
+        // })
+        // $("button").eq(1).click(function(){
+        //     $("div").slideDown(500);
+        // })
+        // $("button:last").click(function(){
+        //     $("div").slideToggle(500);
+        // })
+
+        // fadeIn       fadeOut     fadeToggle
+        $("button:first").click(function(){
+            $("div").fadeOut(500);
+        })
+        $("button").eq(1).click(function(){
+            $("div").fadeIn(500);
+        })
+        $("button:last").click(function(){
+            $("div").fadeToggle(500);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        td{
+            width: 200px;
+            height: 40px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        .jian{
+            width: 20px;
+        }
+        .jia{
+            width: 20px;
+        }
+        .del{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>购物车</h1>
+    <table>
+        <tr>
+            <td><input type="checkbox" id="fxk"/></td>
+            <td>商品</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>小计</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="fxks"/></td>
+            <td>iPhone 12</td>
+            <td class="dj">7299</td>
+            <td>
+                <button class="jian">-</button>
+                <input type="text" class="sl" value="0" style="width: 50px;"/>
+                <button class="jia">+</button>
+            </td>
+            <td class="xj">0</td>
+            <td><button class="del">删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="fxks"/></td>
+            <td>HUAWEI nova8</td>
+            <td class="dj">4699</td>
+            <td>
+                <button class="jian">-</button>
+                <input type="text" class="sl" value="0" style="width: 50px;"/>
+                <button class="jia">+</button>
+            </td>
+            <td class="xj">0</td>
+            <td><button class="del">删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="fxks"/></td>
+            <td>OPPO reno5</td>
+            <td class="dj">2999</td>
+            <td>
+                <button class="jian">-</button>
+                <input type="text" class="sl" value="0" style="width: 50px;"/>
+                <button class="jia">+</button>
+            </td>
+            <td class="xj">0</td>
+            <td><button class="del">删除</button></td>
+        </tr>
+    </table>
+    <p style="font-size: 24px;margin-top: 15px;">总计：<span class="all">0</span></p>
+
+
+    <script>
+        var jia = document.getElementsByClassName("jia");
+        var jian = document.getElementsByClassName("jian");
+        
+        // var tr = document.getElementsByTagName("tr");
+        for(var i=0;i<jia.length;i++){
+            // 加
+            jia[i].onclick = function(){
+                // console.log(this);       //this事件源
+                this.previousElementSibling.value++;
+                jg();
+                zj();
+            }
+            // 减
+            jian[i].onclick = function(){
+                this.nextElementSibling.value--;
+                if(this.nextElementSibling.value<0){
+                    this.nextElementSibling.value = 0
+                }
+                jg();
+                zj();
+            }
+        }
+
+        // 单行删除
+        var del = document.getElementsByClassName("del");
+        for(var i=0;i<del.length;i++){
+            del[i].onclick = function(){
+                this.parentNode.parentNode.remove();
+                zj();
+            }
+        }
+
+        // 全选功能
+        var fxk = document.getElementById("fxk");
+        var fxks = document.getElementsByClassName("fxks");
+        fxk.onclick = function(){
+            // checked复选框选中状态    选中就是true，未选中就是false
+            // console.log(this.checked);
+            for(var i=0;i<fxks.length;i++){
+                fxks[i].checked = fxk.checked;
+            }
+            zj();
+        }
+
+
+        // 复选框点击
+        for(var i=0;i<fxks.length;i++){
+            fxks[i].onclick = function(){
+                zj();
+            }
+        }
+
+        // 小计
+        function jg(){
+            var dj = document.getElementsByClassName("dj");
+            var sl = document.getElementsByClassName("sl");
+            var xj = document.getElementsByClassName("xj");
+            for(var i=0;i<xj.length;i++){
+                xj[i].innerHTML = dj[i].innerHTML*sl[i].value;
+            }
+        }
+
+
+        function zj(){
+            var xj = document.getElementsByClassName("xj");
+            var all = document.getElementsByClassName("all")[0];
+            var sum = 0;
+            for(var i=0;i<fxks.length;i++){
+                if(fxks[i].checked){
+                    sum += parseInt(xj[i].innerHTML)
+                }
+            }
+            all.innerHTML = sum;
+        }
+    </script>
+</body>
+</html>

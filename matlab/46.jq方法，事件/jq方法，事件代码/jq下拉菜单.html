@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        li{
+            width: 250px;
+            height: 40px;
+            border: 1px solid gray;
+            text-align: center;
+            line-height: 40px;
+        }
+        #content{
+            width: 1258px;
+            margin: 50px auto;
+            display: flex;
+        }
+        #content>li{
+            position: relative;
+        }
+        ol{
+            position: absolute;
+            left: -1px;
+            top: 41px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="content">
+        <li>男装
+            <ol>
+                <li>花裤衩</li>
+                <li>衬衫</li>
+                <li>西服</li>
+                <li>皮夹克</li>
+            </ol>
+        </li>
+        <li>女装
+            <ol>
+                <li>旗袍</li>
+                <li>裙子</li>
+                <li>破洞裤</li>
+                <li>洛丽塔</li>
+            </ol>
+        </li>
+        <li>老头装
+            <ol>
+                <li>背心儿</li>
+                <li>军大衣</li>
+                <li>中山装</li>
+                <li>大花裤</li>
+            </ol>
+        </li>
+        <li>老太太装
+            <ol>
+                <li>花棉袄</li>
+                <li>花棉裤</li>
+                <li>保暖裤</li>
+                <li>保暖鞋</li>
+            </ol>
+        </li>
+        <li>娃儿装
+            <ol>
+                <li>尿不湿</li>
+                <li>纸尿裤</li>
+                <li>婴儿床</li>
+                <li>开裆裤</li>
+            </ol>
+        </li>
+    </ul>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // 1.绑定事件
+        $("#content>li").hover(function(){
+            $(this).children("ol").css("display","block");
+        },function(){
+            $(this).children("ol").css("display","none");
+        })
+        $("#content li").hover(function(){
+            $(this).css("background","lightblue")
+        },function(){
+            $(this).css("background","none")
+        })
+    </script>
+</body>
+</html>

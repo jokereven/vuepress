@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+        }
+
+        td {
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid gray;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p>讲台</p>
+    <table style="display:block;width:1000px;margin:30px auto;">
+        <tr>
+            <td>胡歌</td>
+            <td>迪迦</td>
+            <td>杨幂</td>
+            <td>破音</td>
+            <td>刘亦菲</td>
+        </tr>
+        <tr>
+            <td>薛之谦</td>
+            <td>沐沐</td>
+            <td>迪丽热巴</td>
+            <td>班班</td>
+            <td>谢广坤</td>
+        </tr>
+        <tr>
+            <td>古力娜扎</td>
+            <td>韩信</td>
+            <td>赵四</td>
+            <td>林允儿</td>
+            <td>蔡徐坤</td>
+        </tr>
+        <tr>
+            <td>谢大脚</td>
+            <td>盖亚</td>
+            <td>瑶妹</td>
+            <td>啊giao</td>
+            <td>五五开</td>
+        </tr>
+    </table>
+    <p style="width: 100%;height:100px;background:deeppink;font-size: 30px;text-align: center;line-height: 100px;"></p>
+    <button style="width:250px;height:50px;display: block;margin: 20px auto;">开始</button>
+
+
+
+
+
+    <script>
+
+        // 获取元素
+        var btn = document.getElementsByTagName("button")[0];
+        var td = document.getElementsByTagName("td");
+        var op = document.getElementsByTagName("p")[1];
+        // 创建一个全局变量，方便做定时器清除
+        var timer;
+        // console.log(btn);
+        // console.log(td);
+        // 绑定点击事件
+        btn.onclick = function () {
+            if (btn.innerHTML == "开始") {
+                // 加一个定时器，让名字滚动
+                timer = setInterval(function () {
+                    // alert("aaa");
+                    // 找到某一个名字，并且让这个名字所在的td变颜色,操作td
+                    // 取一个随机的下标值，找到一个随机的td，使其变颜色
+                    var index = parseInt(Math.random() * td.length);
+                    // console.log(index);
+
+                    // 根据顺序控制，代码执行顺序自上而下执行，找到某一个随机的td之前先讲所有td全部背景颜色清空
+                    // 想要找到所有的td，需要for循环
+                    for (var i = 0; i < td.length; i++) {
+                        td[i].style.background = "none";
+                    }
+                    // 通过随机的下标值就可以找到随机的td
+                    td[index].style.background = "pink";
+
+                    op.innerHTML = td[index].innerHTML;
+
+                }, 10)
+                btn.innerHTML = "结束";
+            } else {
+                clearInterval(timer);
+                btn.innerHTML = "开始";
+            }
+
+
+        }
+        // 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+    </script>
+</body>
+
+</html>

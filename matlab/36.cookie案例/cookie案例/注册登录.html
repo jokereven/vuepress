@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #zc{
+            width: 300px;
+            height: 400px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        #zc>h1{
+            margin: 50px;
+        }
+        #zc>p{
+            margin-top: 40px;
+        }
+        button{
+            width: 120px;
+            height: 35px;
+            margin-top: 50px;
+        }
+        #dl{
+            width: 300px;
+            height: 400px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        #dl>h1{
+            margin: 50px;
+        }
+        #dl>p{
+            margin-top: 40px;
+        }
+        div{
+            margin-left: 150px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="zc">
+        <h1>注册</h1>
+        <p>账号：<input type="text" id="zc_zh"></p>
+        <p>密码：<input type="password" id="zc_mm"></p>
+        <button id="btn_zc">注册</button>
+    </div>
+    <div id="dl">
+        <h1>登录</h1>
+        <p>账号：<input type="text" id="dl_zh"></p>
+        <p>密码：<input type="password" id="dl_mm"></p>
+        <button id="btn_dl">登录</button>
+    </div>
+
+    <script>
+        // 如果大家想做两个页面的，其实里面的代码是一样的
+        // cookie存到了本地
+        var btn_zc = document.getElementById("btn_zc");
+        var btn_dl = document.getElementById("btn_dl");
+        var zc_zh = document.getElementById("zc_zh");
+        var zc_mm = document.getElementById("zc_mm");
+        var dl_zh = document.getElementById("dl_zh");
+        var dl_mm = document.getElementById("dl_mm");
+        btn_zc.onclick = function(){
+            var arr = [];
+            var txt1 = zc_zh.value;
+            var txt2 = zc_mm.value;
+            arr.push(txt1,txt2);
+            // console.log(txt1);
+            // console.log(txt2);
+            // 可不可以同时添加多个值
+            var date = new Date();
+            date.setDate(date.getDate()+7);
+            // 使用数组来进行多个添加
+            document.cookie = "name="+encodeURIComponent(arr)+";expires="+date;
+            // console.log(decodeURIComponent(document.cookie));
+            // wode123如何分开
+        }
+        // 为什么我在公屏打不了字了，就很尴尬，一会就要讲了
+
+
+        // 把所有的账号和密码全部都放到一个数组里面
+        // name=账号，密码，账号，密码，账号，密码，账号，密码
+        // 账号    密码
+        // 判断的条件怎么写
+        // n   n+1
+
+
+
+
+        btn_dl.onclick = function(){
+            // console.log(decodeURIComponent(document.cookie));
+            // "name="      和未来的判断没有一毛钱关系
+            var index = decodeURIComponent(document.cookie).split("=");
+            // console.log(index[1]);
+            var index1 = index[1].split(",");
+            // console.log(index1);
+            // 拿数组当中的每一条数据和上面的账号密码做对比
+            if(dl_zh.value==index1[0]&&dl_mm.value==index1[1]){
+                alert("成功");
+            }else{
+                alert("失败");
+            }
+        }
+        // 只可以保存一组数据
+        // split()字符串方法
+        // var x = "asd,qwe,zxc";
+        // console.log(x.split(","))
+
+
+        // 休息十分钟
+
+
+    </script>
+</body>
+</html>

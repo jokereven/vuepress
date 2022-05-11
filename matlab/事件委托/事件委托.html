@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>添加</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+
+    <script>
+        // 事件委托/事件代理
+        // 官方解释：利用事件冒泡，指定一个事件处理程序，就可以管理某一类的所有事件
+        // 人话：利用事件冒泡，通过event事件对象找到触发的元素
+        // 在下周一的时候，我，班班老师，沐沐老师都有快递
+        // 我，班班老师，沐沐老师每个人站在大门口，迎着冷风吹，等快递
+        // 交给咱们的前台小姐姐，然后由前台小姐姐看一下是谁的快递，然后再分给我们
+        // 自己有一件事儿要干，但是我不干，我委托给别人帮我干
+        // 为什么要使用事件委托
+
+        // 100元素需要处理
+        // 执行了一百次
+        // 页面上的事件处理程序数量直接关系到页面的整体运行性能
+        // 性能优化
+        // 主要思想，减少DOM操作
+
+
+        var ul = document.getElementsByTagName("ul")[0];
+        var li = ul.getElementsByTagName("li");
+        // for(var i=0;i<li.length;i++){
+        //     li[i].onmouseover = function(){
+        //         this.style.background = "pink";
+        //     }
+        //     li[i].onmouseout = function(){
+        //         this.style.background = "none";
+        //     }
+        // }
+
+        ul.onmouseover = function(event){
+            event = event || window.event;
+            target = event.target || event.srcElement;
+            // this.style.background = "pink";
+            // console.log(target.nodeName);      //nodeName节点名称
+            // target.style.background = "pink";
+            if(target.nodeName.toLowerCase()=="li"){
+                target.style.background = "pink";
+            }
+            // console.log(target.nodeName.toLowerCase());
+        }
+        ul.onmouseout = function(event){
+            event = event || window.event;
+            target = event.target || event.srcElement;
+            // this.style.background = "none";
+            // target.style.background = "none";
+            if(target.nodeName.toLowerCase()=="li"){
+                target.style.background = "none";
+            }
+        }
+
+        // 事件冒泡
+        // event事件对象     target     返回事件的目标节点/事件源
+
+        var btn = document.getElementsByTagName("button")[0];
+        btn.onclick = function(){
+            var oli = document.createElement("li");
+            oli.innerHTML = "123";
+            ul.appendChild(oli);
+        }
+    </script>
+</body>
+</html>

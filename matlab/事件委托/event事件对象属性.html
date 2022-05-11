@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="1.jpg" alt="">
+
+    <script>
+        // 昨天讲的event事件对象的方法
+        // 今天我们讲event事件对象的属性
+        // 如何来区分这个东西具体是方法还是属性
+        // ()
+        // var img = document.getElementsByTagName("img")[0];
+        // console.log(img.src);
+        // event.stopPropagation()
+        // type属性     类型
+        // nodeType    typeof
+        // 通过type可以获取事件发生的类型
+        // var img = document.getElementsByTagName("img")[0];
+        // img.addEventListener("click",function(event){
+            // event = event || window.event;
+            // console.log(event.type);        //pic   click   src   document
+            // console.log(event.target);          //img   
+            // 一个属性，不是方法
+            // target = event.target || event.srcElement
+            // console.log(target);          //target    event.target
+        // },false)
+        // target属性      可返回事件的目标节点   这个事件是由谁来触发的
+        // target兼容问题       IE8及以下       使用srcElement代替target
+
+    </script>
+</body>
+</html>

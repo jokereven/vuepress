@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>添加</button>
+    <ul>
+
+    </ul>
+
+    <script>   
+        // 获取元素
+        var ipt = document.getElementsByTagName("input")[0];
+        var btn = document.getElementsByTagName("button")[0];
+        var ul = document.getElementsByTagName("ul")[0];
+        // 给按钮绑定点击事件
+        
+        btn.onclick = function(){
+            // alert("aaa");
+            // 获取当前input本文框内部的值
+            var txt = ipt.value;
+            // 创建元素节点li
+            var oli = document.createElement("li");
+            var txt = document.createTextNode(txt)
+            // console.log(oli);
+            oli.appendChild(txt);
+            // oli.innerHTML = txt;
+            // console.log(oli);
+            // 添加元素
+            ul.appendChild(oli);
+            ipt.value = null;
+        }
+    </script>
+</body>
+</html>

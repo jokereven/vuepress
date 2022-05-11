@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>点击</button>
+    <p></p>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // $("button").click(function(){
+        //     var txt = $("input").val();
+        //     document.write("这是我的文本框里面的内容，内容是："+txt+"agawgawgw");
+        // })
+        $("button").click(function(){
+            var txt = $("input").val();
+            document.write(`这是我文本框里面的内容，内容是：${txt}`);
+            document.write(`
+                today is a good day,我的文本是${txt}666<br>这是我的另一行文本，内容也是${txt}
+            `)
+            document.write(`
+                <ul>
+                    <li>${txt}</li>
+                    <li>${txt}</li>
+                    <li>${txt}</li>
+                </ul>
+            `)
+        })
+        
+    </script>
+</body>
+</html>

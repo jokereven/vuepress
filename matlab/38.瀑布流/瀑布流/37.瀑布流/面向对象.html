@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js中所有的事物都是对象：字符串，数值，数组，函数.....
+        // obj   键值对
+        // 对象里面可以写字符串，数值，数组，函数
+        // 对象的创建
+        // 字面量的方式
+        // 1.声明时添加2.先声明，后添加
+        // var x = {
+        //     name:"林清玄"
+        // }
+        // console.log(x);
+        // var y = {};
+        // y.name = "杨晨光";
+        // console.log(y);
+        // var arr = new Array()       //通过原生构造函数形式创建数组对象
+        // var obj = new Object()          //通过原生构造函数形式创建原生对象
+        // var date = new Date()          //通过原生构造函数形式创建时间对象
+        // var str = new String()          //通过原生构造函数形式创建字符串对象
+
+
+        // 使用原生构造函数形式创建单个对象
+        // var person = new Object();
+        // person.name = "洪世贤";
+        // person.sex = "男";
+        // person.ah = "你怎么穿着品如的衣服";
+        // console.log(person);
+        // 从创建对象的过程来说，两者底层实现没有区别，都是一样的
+
+        // var person1 = {
+        //     name:"光头强"
+        // }
+        // var person2 = {
+        //     name:"熊大"
+        // }
+        // var person3 = {
+        //     name:"熊二"
+        // }
+
+        // 工厂车间
+        // 有一个车床，然后通过这一个车床，可以做出很多的东西
+        // 工厂模式
+        // 创建一个函数
+        // function createPerson(name,age,sex){
+        //     var person = new Object();
+        //     person.name = name;
+        //     person.age = age;
+        //     person.sex = sex;
+        //     return person;
+        // }
+
+        // var person1 = createPerson("林清玄",21,"男");
+        // console.log(person1);
+        // var person2 = createPerson("黄建辉",21,"男");
+        // console.log(person2);
+
+        // 工厂模式就是讲创建对象的语句放到了一个函数里面，通过传参的方式来创建特定的对象，最后返回这个对象
+
+        // 创建水果
+        // function createFruit(name,color){
+        //     var obj = new Object();
+        //     obj.name = name;
+        //     obj.color = color;
+        //     return obj;
+        // }
+        // var bnn = createFruit("香蕉","黄色");
+        // console.log(bnn);
+
+
+        // createFruit()和createPerson()也叫做对象构造器
+        // 能根据接收的参数来创建不同的对象
+
+        // instanceof检测操作符
+        // 检测实例的对象属不属于object原生构造函数格式中，如果属于，返回true，如果不属于，返回false
+
+        // console.log(person1 instanceof Object);
+        // console.log(person2 instanceof Object);
+        // console.log(bnn instanceof Object);
+
+        // console.log(person1 instanceof createPerson);
+        // console.log(bnn instanceof createFruit);
+
+
+        // 自定义构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        var ren = new Person("林清玄","21");
+        console.log(ren);
+        console.log(ren instanceof Person);
+
+    </script>
+</body>
+</html>

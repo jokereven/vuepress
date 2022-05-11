@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象的解构赋值           属性和属性名
+        // let {a,b} = {a:"1",b:"2"};
+        // console.log(a)
+        // console.log(b)
+        // let {a} = {b:"aaa"};
+        // console.log(a)
+        // 可以嵌套
+        // let obj = {
+        //     p:[
+        //         "hello",
+        //         {index:"word!"}
+        //     ]
+        // }
+        // let {p:[x,{y}]} = obj;
+        // console.log(x);
+        // p是模式
+        // let {p,p:[a,{index}]} = obj;
+        // console.log(p);
+        // console.log(a);
+        // let {p} = obj;
+        // console.log(p);
+        // console.log(index);
+        // 默认值
+        // let {x=1} = {x:123};
+        // console.log(x);
+        // 字符串也可以进行赋值
+        // let [a,b,c,d] = "hello";
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+        // console.log(d)
+        // 字符串里面有一个length属性
+        // let {length:x} = "hello";
+        // console.log(x);
+        // let {a=123} = {}
+
+        // 函数的解构赋值
+        // 参数
+        // function fn([x,y]){
+        //     return x+y;
+        // }
+        // console.log(fn([1,2]));
+
+        // 交换变量的值
+        // let x = 1;
+        // let y = 2;
+        // [x,y] = [y,x];
+        // console.log(x);
+        // console.log(y);
+        // 函数返回多个值
+        // 原本函数只能返回一个值，如果想要返回多个值，用解构赋值就非常方便了
+        // 返回数组
+        // function fn(){
+        //     return [1,2,3]
+        // }
+        // let [a,b,c] = fn();
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+        // 返回对象
+        // function fn(){
+        //     return {
+        //         x:123,
+        //         y:456
+        //     }
+        // }
+        // let {x,y} = fn();
+        // console.log(x);
+        // console.log(y);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="ipt">
+    <select name="" id="sel">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+    </select> -->
+
+    <input type="text" >
+    <script>
+        // 事件模型分为哪几类
+        // 内联模型    动态绑定
+        // 键盘事件
+        // onkeydown    某个键盘按键按下
+        // onkeyup      某个键盘按键抬起，松开
+
+        // var ipt = document.getElementById("ipt");
+        // ipt.onkeydown = function(){
+        //     console.log("按下了一个键");
+        // }
+        // ipt.onkeyup = function(){
+        //     console.log("抬起了键");
+        // }
+        // 键码值
+        // 回车
+
+        // 表单事件
+        // 聚焦
+        // onfocus聚焦事件      onblur失焦
+        // ipt.onfocus = function(){
+        //     console.log("光标移动到了文本框上");
+        // }
+        // ipt.onblur = function(){
+        //     console.log("光标移开了文本框");
+        // }
+
+        // onchange     改变
+        // 当内部的值发生改变的时候所触发的事件
+        // ipt.onchange = function(){
+        //     console.log("啊啊啊啊");
+        // }
+
+        // var sel = document.getElementById("sel");
+        // sel.onchange = function(){
+            // console.log("aaaa");
+            // console.log(this);
+        // }
+
+        // oninput用户输入时触发的事件
+        // ipt.oninput = function(){
+        //     console.log("aa");
+        // }
+
+        // oninput是实时触发，onchange是失焦以后触发
+        // ipt.oninput = function(){
+        //     console.log("aaa");
+        // }
+
+        // var index = 0;
+        // var inp = document.getElementsByTagName("input")[0];
+        // inp.oninput = function(){
+        //     console.log(index++);
+        // }
+
+        // 窗口事件
+        // onload  加载完毕执行以后执行的事件
+
+        // window.onload = function(){
+            // 写在所有代码的最外侧
+        // }
+        // onresize    当页面整体大小发生改变的时候触发的事件
+        // window.onresize = function(){
+        //     console.log("aaa");
+        // }
+
+        // 不常用的事件
+        // 粘贴板事件
+        // xcv       拷贝oncopy     粘贴onpaste   剪切   oncut
+        // var inp = document.getElementsByTagName("input")[0];
+        // inp.oncopy=function(){
+        //     console.log("勤快点，别粘我内容");
+        //     alert("自己不能勤快点，别粘我东西");
+        // }
+
+        // inp.onpaste=function(){
+        //     console.log("勤快点，别粘我内容");
+        //     alert("自己不能勤快点，别粘我东西");
+        // }
+
+        // inp.oncut=function(){
+        //     console.log("勤快点，别粘我内容");
+        //     alert("自己不能勤快点，别粘我东西");
+        // }
+
+    </script>
+</body>
+</html>

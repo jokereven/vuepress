@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // 1.基本选择器   5种
+        // id   class  element   *   #id,.class,element
+        // $("#txt")
+        // $(".class")
+        // $("element")
+        // $("*")
+        // $("#id,.class,element")
+        // 过滤选择器
+        // 获取第一个元素
+        // :first      first()
+        // $("p:first")    $("p").first()
+        // :last        last()
+        // :not()      获取除给地你个选择器之外的所有元素
+        // $("p:not(.ps)")     获取到除了class名字为ps的所有p标签
+        // :even 下标偶数   :odd  下标奇数
+        // 根据下标值找到元素
+        // eq(index)
+        // 获取下标值大于XX的元素
+        // $("p:gt(2)")
+        // :lt()
+        // 层次选择器
+        // 后代选择器
+        // $("div p")   获取到div内部所有的p标签
+        // 子代选择器
+        // $("div>p")      获取到div的子元素p标签
+        // 内容过滤选择器
+        // :contains(txt)      获取含有文本内容为txt的元素
+        // txt123
+        // :empty空
+        // :parent非空
+        // 可见性过滤选择器
+        // 获取隐藏的
+        // :hidden
+        // 获取显示的
+        // :visible
+        // 属性过滤选择器
+        // [attr]获取含有attr这个属性的元素
+        // [attr=value]获取attr的属性值是value的元素
+        // [attr!=value]获取attr的属性值不是value的元素
+        // 表单选择器
+        // :input获取input textarea select button
+        // 一个一个的分类
+        // :text
+        // :password
+        // :radio
+        // :checkbox
+        // :file
+        // :button
+
+        // js原生对象和jquery对象的互相转换
+        // js原生---->jq对象
+        // var txt = document.getElementsByClassName("aaa");
+        // $(txt)
+        // jq对象------>js原生对象
+        // $("#txt")
+        // var op = $("#txt").get(0)
+
+
+        // 只可以写一次
+        window.onload = function(){
+
+        }
+        // 可以写多次
+        $(function(){
+
+        })
+
+
+        // css()获取或者设置css样式
+        // html()获取或者设置文本
+        // val()获取或者设置表单文本
+    </script>
+</body>
+</html>

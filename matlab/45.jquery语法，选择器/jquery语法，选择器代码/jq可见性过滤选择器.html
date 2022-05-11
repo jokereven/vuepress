@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: none;"></div>
+    <div></div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // 可见性过滤选择器
+        // :hidden 选取不可见元素  :visible  选取可见元素
+        $("div:hidden").css("background","red");
+        $("div:visible").css("background","green");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        th,td{
+            width: 200px;
+            height: 35px;
+            border: 1px solid gray;
+            text-align: center;
+            line-height: 35px;
+        }
+        .cls1{
+            background: orange;
+        }
+        .cls2{
+            background: green;
+        }
+        .cls3{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    姓名：<input type="text" id="xm">
+    年龄：<input type="text" id="nl">
+    爱好：<input type="text" id="ah">
+    <button id="tj">添加</button>
+    <button id="del_all">全部删除</button>
+    <button id="del_little">选中删除</button>
+    <input type="text" id="cz">
+    <button id="btn_cz">查找</button>
+    <input type="text" id="xg">
+    <button id="btn_xg">修改</button>
+    <table>
+        <thead class="cls1">
+            <th><input type="checkbox" id="fxk"></th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>爱好</th>
+            <th>操作</th>
+        </thead>
+    </table>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // 1.添加功能
+        $("#tj").click(function(){
+            // 创建节点
+            var trs = $("<tr></tr>");
+            var td1 = $("<td><input type='checkbox' class='fxks'></td>");
+            var td2 = $("<td></td>");
+            td2.html($("#xm").val());
+            var td3 = $("<td></td>");
+            td3.html($("#nl").val());
+            var td4 = $("<td></td>");
+            td4.html($("#ah").val());
+            var td5 = $("<td><input type='button' value='删除' class='dels'></td>");
+            // 把创建的节点添加到页面上
+            trs.append(td1);
+            trs.append(td2);
+            trs.append(td3);
+            trs.append(td4);
+            trs.append(td5);
+            $("table").append(trs);
+            // 隔行变色调用
+            ghbs();
+
+            // 单行删除
+            $(".dels").click(function(){
+                $(this).parent().parent().remove();
+                // 调用隔行变色
+                ghbs();
+            })
+
+            // 全部删除
+            $("#del_all").click(function(){
+                $("tr:not(tr:first)").remove();
+            })
+
+            // 全选功能
+            $("#fxk").click(function(){
+                // checked = checked
+                // $(".fxks").checked = $("#fxk").checked;
+                // console.log($("#fxk").prop("checked"));          //true    false
+                // console.log($(".fxks").prop("checked"));
+                $(".fxks").prop("checked",$("#fxk").prop("checked"));
+            })
+
+            // 选中删除
+            $("#del_little").click(function(){
+                // each()循环
+                $(".fxks").each(function(index,value){
+                    // 第一个参数，代表下标值
+                    // 第二个参数，代表具体内容
+                    // console.log(index);
+                    // console.log(value);
+                    // console.log(a);
+                    // console.log(b);
+                    // 判断所有复选框选中状态是否为选中
+                    if($(value).prop("checked")==true){
+                        // console.log(value);
+                        // 删除掉父元素的父元素
+                        $(value).parent().parent().remove();
+                        // 调用
+                        ghbs();
+                    }
+                    // if(index==1){
+                        // return false;            //打断      相当于js的break
+                        // return true;             //继续      相当于js的continue
+                    // }
+                    // console.log(value);
+                })
+            })
+
+
+            // 查找
+            $("#btn_cz").click(function(){
+                // 获取input框文本
+                var txt = $("#cz").val();
+                // console.log($("td:contains("+txt+")"));
+                $("tr").css({"background":"","color":""});
+                $("td:contains("+txt+")").parent().css({"background":"black","color":"white"})
+            })
+
+            // 修改
+            $("td").click(function(){
+                $(this).attr("class","cls3").siblings().attr("class","").parent().siblings().children("td").attr("class","");
+            })
+            $("td:has(input)").off("click");
+            $("#btn_xg").click(function(){
+                var txt = $("#xg").val();
+                $(".cls3").html(txt);
+                $("td").attr("class","");
+                $("tr").css({"background":"","color":""})
+            })
+        })
+
+        // 隔行变色
+        function ghbs(){
+            $("tr:even").attr("class","cls1");
+            $("tr:odd").attr("class","cls2");
+        }
+    </script>
+</body>
+</html>

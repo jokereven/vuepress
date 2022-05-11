@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: fixed;
+            /* left   top */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+
+        var box = document.getElementsByTagName("div")[0];
+        var bx,by,mx,my;
+        // 创建一个开关
+        var bool = false;
+        box.onmousedown = function(event){
+            var event = event || window.event;
+            bool = true;
+            bx = box.offsetLeft;
+            by = box.offsetTop;
+            mx = event.clientX;
+            my = event.clientY;
+        }
+        document.onmousemove = function(event){
+            var event = event || window.event;
+            var height = document.documentElement.clientHeight;
+            if(bool){
+                
+                box.style.left = event.clientX-mx+bx+"px";
+                box.style.top = event.clientY-my+by+"px";
+                if(box.offsetLeft<=0){
+                    box.style.left=0
+                }
+                // console.log(box.offsetLeft)
+                if(box.offsetTop>=height){
+                    box.style.top = height-box.clientHeight + "px";
+                }
+                // console.log(box.offsetTop)
+                // console.log(height);
+            }
+        }
+        box.onmouseup = function(){
+            bool = false;
+        }
+    </script>
+</body>
+</html>

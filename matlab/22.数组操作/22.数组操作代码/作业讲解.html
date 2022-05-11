@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <select name="" id="one">
+        <option value="">————请选择————</option>
+        <option value="0">————辽宁————</option>
+        <option value="1">————广东————</option>
+        <option value="2">————河北————</option>
+    </select>
+    <select name="" id="two">
+        <option value="">————请选择————</option>
+    </select> -->
+
+
+    <select name="" id="one">
+        <option value="">————请选择————</option>
+    </select>
+    <select name="" id="two">
+        <option value="">————请选择————</option>
+    </select>
+    <select name="" id="thr">
+        <option value="">————请选择————</option>
+    </select>
+
+
+
+    <script>
+        // var arr = [
+        //     ["沈阳","铁岭"],
+        //     ["广州","深圳"],
+        //     ["廊坊","石家庄"]
+        // ]
+
+        // var one = document.getElementById("one");
+        // var two = document.getElementById("two");
+        // one.onchange = function(){
+        //     // console.log(this.value);
+        //     // console.log(arr[this.value]);
+        //     two.length = 1;
+        //     for(var i=0;i<arr[this.value].length;i++){
+        //         var op = document.createElement("option");
+        //         // console.log(arr[this.value][i]);
+        //         op.innerHTML = arr[this.value][i]
+        //         two.appendChild(op)
+        //     }
+        // }
+
+
+
+        // 封装一下
+        // 参数
+        // 添加的东西是不一样的，添加的位置是不一样的
+        // 三个数组
+        var one = document.getElementById("one");
+        var two = document.getElementById("two");
+        var thr = document.getElementById("thr");
+        var arr_sheng = ["辽宁省","广东省","河北省"];
+        var arr_shi = [
+			["沈阳市","铁岭市","大连"],
+			["广州市","佛山市","珠海市"],
+			["石家庄市","廊坊市","承德市"]
+		];
+        var arr_xian = [
+			[
+				["大东区","沈河区","沈北区"],
+				["调兵山市","西丰县","昌图县"],
+				["中山区","沙河口区","甘井子区"]
+			],
+			[
+				["天河区","白云区","番禺区","越秀区","黄埔区"],
+				["南海区","顺德区","三水区"],
+				["香洲区","斗门区"]
+			],
+			[
+				["长安区","桥西区","新华区","藁城区"],
+				["安次区","广阳区","固安县"],
+				["双桥区","承德县","兴隆县"]
+			]
+		]
+        
+        function fn(arr,element){
+            // arr代表添加的数组，element代表添加的位置
+            for(var i=0;i<arr.length;i++){
+                // arr[i]数组里面的每一个数据
+                var op = document.createElement("option");
+                op.innerHTML = "————"+arr[i]+"————";
+                op.value = i;
+                element.appendChild(op);
+            }
+        }
+
+        fn(arr_sheng,one);
+
+        var quan;       //用于中间存储二维数组
+
+        // 二级联动
+        one.onchange = function(){
+            two.length = 1;
+            thr.length = 1;
+            fn(arr_shi[this.value],two);
+            quan = arr_xian[this.value];
+            // console.log(quan);
+        }
+
+        // 三级联动
+        two.onchange = function(){
+            thr.length = 1;
+            fn(quan[this.value],thr);
+        }
+
+        
+    </script>
+</body>
+</html>

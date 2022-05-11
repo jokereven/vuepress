@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // let声明变量，和var的用法类似
+        // 通过let来声明的变量只在所在的代码块内有效
+        // {
+            // let a = 1;
+            // console.log(a)      //可以找到
+        // }
+        // console.log(a);      //报错，不可以找到
+        // 常见用处
+        // for循环内部
+        // var 和 let的区别
+        // var arr = [];
+        // for(var i=0;i<10;i++){
+        //     arr[i] = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // arr[6]();
+        // 全局范围内有效，每次循环始终操作的都是同一个变量i
+        // var arr = [];
+        // for(let i=0;i<10;i++){
+        //     arr[i] = function(){
+        //         console.log(i);
+        //     }
+        // }
+        // arr[6]();
+        // 每次循环都是一个全新的变量i，互相不干预
+        // 不存在变量声明提升
+        // 声明提升：先使用，再定义
+        // console.log(index);
+        // let index = 1;
+        // 暂时性死区
+        // 只要块级作用域内存在let命令，他所声明的变量就被绑定到这个区域，不再受外部的影响
+        // var index = 1;
+        // if(true){
+        //     index = 10;
+        //     let index;
+        // }
+        // 在使用let声明变量之前，任何关于这个变量的操作，都会报错
+        // 不允许重复声明
+        // 相同的作用域当中，重复声明了一个变量，就会报错
+        // function fn(){
+        //     var a = 1;
+        //     let a = 1;
+        // }
+        // function fn(){
+        //     let a = 1;
+        //     let a = 1;
+        // }
+        // const常量，一旦声明，常量的值就不可以i改变
+        // const a = 123;
+        // a = 456;
+        // var timer;
+        // let aaaa;
+        // const index;声明时必须立刻给个值
+
+        // const obj = {};
+        // obj.name = "小新";
+        // obj.age = "18";
+        // console.log(obj.name);
+        // obj = {};
+        // 不是变量的值不可以改变，而是这个变量指向的哪个内存地址所保存的数据不能改变
+        // 数组里面的解构赋值
+        // let x;
+        // const x;
+        // let index = 1;
+        // const index = 2;        //不可以
+        // let [a,b,c] = [1,2,3];
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+        // 当变量个数>值
+        // let [a,b,c,d] = [1,2];
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+        // console.log(d)
+        // 当变量个数<值
+        // let [a,b] = [1,2,3,4];
+        // console.log(a)
+        // console.log(b)  
+        // 不完全解构
+        // 默认值
+        // 默认值是当右侧没有具体的值赋值给变量的时候，这个变量被赋予的值
+        // let [a,b=10] = [1,5];
+        // console.log(a)
+        // console.log(b)
+        // ...代表将值放到一个数组内部
+        let [a,b,...c] = [1,2,3,4,5,6,7,8,9];
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+
+    <script>
+        // 放假时间：6-19
+        // 20号准时上课
+        // 匿名函数       自执行函数    拉姆达函数
+        // 特点：1.不会污染全局2.定义和调用合为一体
+        // (function(形参){
+
+        // })(实参)
+
+        // 闭包：
+        // 闭包是一个什么东西？函数
+        // 通过闭包可以有权访问另一个函数作用域当中的私有变量
+        // 不会污染全局
+        // 不能及时的释放内存，说明了这些局部的变量一直保留在内存中，可以达到一个全局变量的效果
+        // 闭包和全局变量有一个最本质的区别
+        // 显示全局变量不可以被删除
+        // 闭包可以手动释放
+        // 闭包 = null;
+
+        // var btn = document.getElementsByTagName("button");
+        // for(var i=0;i<btn.length;i++){
+        //     btn[i].onclick = (function(index){
+        //         // alert(i)
+        //         return function(){
+        //             alert(index);
+        //         }
+        //     })(i);
+        // }
+
+        // document.cookie = "user="+encodeURIComponent("林清玄");
+
+        // document.cookie = "name="+encodeURIComponent("吃我一拳");
+        
+        // cookie组成       name=value;[expires=date]//失效时间
+        // 默认是浏览器窗口关闭以后失效
+
+        // 如何删除cookie
+        // 自己创建一个时间，setDate(date.getDate()-1)//变成前一天
+        // new Date(0)返回格林尼治时间
+        
+
+        // var date = new Date();
+        // date.setDate(date.getDate()+7);
+        // document.cookie = "user="+encodeURIComponent("小新")+";expires="+date;
+
+        // var date = new Date();
+        // date.setDate(date.getDate()+7);
+        // document.cookie = "ming="+encodeURIComponent("周靖")+";expires="+date;
+        
+        // var date = new Date();
+        // date.setDate(date.getDate()-1);
+        // document.cookie = "ming="+encodeURIComponent("刘玉林")+";expires="+date;
+
+        // console.log(document.cookie)
+
+            
+
+
+    </script>
+</body>
+</html>

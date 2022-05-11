@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <div id="box">
+        <img src="1.jpg" alt="">
+        <div>
+            <h1>这是内部的h1</h1>
+            <div>
+                <p>这是p标签</p>
+                <div>
+                    <span>这是我的span标签</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>这是内部的h1</h1>
+            <div>
+                <p>这是p标签</p>
+                <div>
+                    <span>这是我的span标签</span>
+                </div>
+            </div>
+        </div>
+        <img src="1.jpg" alt="">
+        <img src="1.jpg" alt="">
+        <p>111111</p>
+        <p>222222</p>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        // find()方法
+        // 获取当前元素集合种的每个元素的后代
+        // $("#box").find("div").css("color","red");
+        // 在给定的父元素下匹配所有的子元素
+        // children()方法
+        // $("#box").children("div").css("border","1px solid gray");
+        // next()下一个
+        // nextElementSibling
+        // $("#box").children().first().next("div").css("border","1px solid gray");
+        // $("#box").children().last().prev().css("background","red");
+        // nextAll()
+        // $("#box").children().first().nextAll().css("border","1px solid gray");
+        // $("#box").children().last().prevAll().css("background","red");
+        // siblings()   获取匹配集合种每个元素的同胞，通过选择器进行筛选
+        // $("button").eq(1).css("background","red").siblings("button").css("background","pink");
+    </script>
+</body>
+</html>

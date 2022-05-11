@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 常量
+        // const 声明一个只读的变量
+        // 一旦声明，就不可以更改
+        // const index = 3.14159265358579;
+        // console.log(index);
+        // index = 3;
+        // 说明改变常量的值就会报错
+        // const index;
+        // 使用const声明常量，如果声明就必须立即初始化，不能留到以后再赋值
+        // if(true){
+            // const index = 5;
+        // }
+        // console.log(index);
+        // const的作用域和let相同，只在声明所在的作用域当中有效
+        // 不存在声明提升
+        // if(true){
+        //     console.log(index);
+        //     const index = 10;
+        // }
+        // 不可以进行重复声明
+        // var index = 10;
+        // const index = 20;
+        // const index = 10;
+        // const index = 20;
+        // let是变量，const是常量，本质区别
+
+        // const fn = {};
+        // fn.name = "小新";
+        // console.log(fn.name);
+        // fn = {};
+        // 常量只是内存地址所保存的数据不得改动
+        // 数字，字符串，布尔值，值就保存再变量指向的那个内存地址
+        // 但是对于复合类型的数据，比如对象或者数组
+        // 指向的内存地址是一个指针，指针是指向具体的数据的
+        // 指针是不可以被修改的
+        // const index = 123;
+        // const fn = {};
+        const obj = {};
+        obj.name = "林清玄";
+        console.log(obj.name);
+        obj = {};
+    </script>
+</body>
+</html>

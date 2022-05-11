@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .banner {
+            width: 1226px;
+            height: 460px;
+            margin: 100px auto;
+            /* background: red; */
+            position: relative;
+        }
+
+        .banner>ul>li {
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .banner>ul>li>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        button {
+            width: 40px;
+            height: 70px;
+            position: absolute;
+            top: 195px;
+            font-size: 46px;
+            border: none;
+            background: none;
+            color: gray;
+            outline: none;
+        }
+
+        /* button:nth-of-type(1){ */
+        /* background: url(//i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png) no-repeat -84px 50%; */
+        /* } */
+        /* button:nth-of-type(2){
+            background: url(//i1.mifile.cn/f/i/2014/cn/icon/icon-slides.png) no-repeat -125px 50%;
+        } */
+        button:nth-of-type(1) {
+            background: url(images/icon-slides.png) no-repeat -84px 0px;
+            left: 234px;
+        }
+
+        button:nth-of-type(2) {
+            right: 0;
+            background: url(images/icon-slides.png) no-repeat -126px 0px;
+        }
+
+        button:nth-of-type(1):hover {
+            /* background: rgba(0,0,0,0.4); */
+            background-position: 0px 0px;
+            cursor: pointer;
+        }
+
+        button:nth-of-type(2):hover {
+            /* background: rgba(0,0,0,0.4); */
+            background-position: -44px 0px;
+            cursor: pointer;
+        }
+
+        ol {
+            width: 68px;
+            height: 10px;
+            position: absolute;
+            bottom: 18px;
+            right: 32px;
+            /* background: red; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ol>li {
+            width: 6px;
+            height: 6px;
+            border: 2px solid hsla(0, 0%, 100%, .3);
+            background: rgba(0, 0, 0, .4);
+            border-radius: 50%;
+        }
+
+        .cls {
+            background: hsla(0, 0%, 100%, .4);
+            border-color: rgba(0, 0, 0, .4);
+        }
+
+        ol>li:hover {
+            background: hsla(0, 0%, 100%, .4);
+            border-color: rgba(0, 0, 0, .4);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul>
+            <li style="opacity: 1;"><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.webp" alt=""></li>
+            <li><img src="images/3.webp" alt=""></li>
+            <li><img src="images/4.webp" alt=""></li>
+        </ul>
+        <button></button>
+        <button></button>
+        <ol>
+            <li class="cls"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+
+    <!-- 1.搭静态页面
+    2.左右按钮点击效果
+    (1).获取元素和绑定事件
+    (2).分析，如何来实现，肯定有一个下标值，通过下标值来控制
+    (3).利用下标值找到你需要显示的图片
+    (4).清空样式，if判断，重复循环
+    3.在左右按钮都已经写好的基础上，增加定时器，以及鼠标移入和鼠标移出的效果
+    4.分页器的静态样式
+    (1).什么情况下是分页器的选中状态
+    5.一样，因为图片和分页器的变化效果一样的，就可以通过上面创建好的全局变量来操作分页器按钮
+    6.分页器点击效果
+    (1).绑定点击事件
+    (2).手动保存变化的下标值
+    (3).和选项卡效果一样
+    (4).需要注意的是，前后操作元素所使用的下标值保持一致，只有一致了以后才不会有冲突 -->
+</body>
+<script>
+    // 获取
+    var banner = document.getElementsByClassName("banner")[0];
+    var btn = document.getElementsByTagName("button");
+    var ul = document.getElementsByTagName("ul")[0];
+    var ul_li = ul.getElementsByTagName("li");
+    var ol = document.getElementsByTagName("ol")[0];
+    var ol_li = ol.getElementsByTagName("li");
+    var index = 0;
+    var timer;
+    // 点击事件
+    btn[1].onclick = function () {
+        // alert("aaa");
+        index++;
+        for (var i = 0; i < ul_li.length; i++) {
+            ul_li[i].style.opacity = 0;
+            ol_li[i].className = "";
+        }
+        if (index > ul_li.length - 1) {
+            index = 0;
+        }
+        ul_li[index].style.opacity = 1;
+        ol_li[index].className = "cls";
+    }
+    btn[0].onclick = function () {
+        // alert("aaa");
+        index--;
+        for (var i = 0; i < ul_li.length; i++) {
+            ul_li[i].style.opacity = 0;
+            ol_li[i].className = "";
+        }
+        if (index < 0) {
+            index = ul_li.length - 1;
+        }
+        ul_li[index].style.opacity = 1;
+        ol_li[index].className = "cls";
+    }
+
+    var run = function () {
+        index++;
+        for (var i = 0; i < ul_li.length; i++) {
+            ul_li[i].style.opacity = 0;
+            ol_li[i].className = "";
+        }
+        if (index > ul_li.length - 1) {
+            index = 0;
+        }
+        ul_li[index].style.opacity = 1;
+        ol_li[index].className = "cls";
+    }
+    // 自动切换
+    // setInterval   定时器
+    timer = setInterval(run, 2000);
+
+
+    // 鼠标移入，鼠标移出
+    banner.onmouseover = function () {
+        clearInterval(timer);
+
+        for (var i = 0; i < ol_li.length; i++) {
+            ol_li[i].zhi = i;
+            ol_li[i].onclick = function () {
+                // alert("aaa");
+                // alert(this.zhi);
+                for (var j = 0; j < ul_li.length; j++) {
+                    ul_li[j].style.opacity = 0;
+                    ol_li[j].className = "";
+                }
+                index = this.zhi;
+                ul_li[index].style.opacity = 1;
+                this.className = "cls";
+                // ol_li[this.zhi]     this       点击第一个按钮
+            }
+        }
+
+    }
+    banner.onmouseout = function () {
+        timer = setInterval(run, 2000);
+    }
+</script>
+
+</html>

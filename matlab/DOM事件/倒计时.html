@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            width: 100%;
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <script>
+        var op = document.getElementsByTagName("p")[0];
+        // 距离过年放假的倒计时
+        
+
+        // 定时器
+        setInterval(function(){
+            // 获取当前时间
+            var dqsj = new Date();
+            // 设置一个结束时间
+            var jssj = new Date("2021/2/5 22:30:00");
+            // 相减，算出剩余时间
+            var sysj = jssj - dqsj;
+            console.log(sysj);
+            // 转换，天，小时，分钟，秒
+            var tian = parseInt(sysj/1000/60/60/24);
+            console.log(tian);
+            var shi = parseInt(sysj/1000/60/60%24);
+            console.log(shi);
+            var fen = parseInt(sysj/1000/60%60);
+            console.log(fen);
+            var miao = parseInt(sysj/1000%60);
+            console.log(miao);
+            // 字符串拼接
+            op.innerHTML = "距离过年放假还有"+tian+"天"+shi+"小时"+fen+"分钟"+miao+"秒钟";
+        },1000);
+    </script>
+</body>
+</html>

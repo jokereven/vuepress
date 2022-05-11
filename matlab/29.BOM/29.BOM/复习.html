@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数定义和调用，this
+        // 函数定义方式    3种
+        // 函数声明定义
+        // funciton fn(){}
+        // 函数表达式定义
+        // 匿名式函数表达式
+        // var fn = function(){}
+        // 命名式函数表达式
+        // var fn = function show(){}
+        // 构造函数
+        // function Person(){}
+        // var person = new Person()
+
+        // this这个的意思
+        // 不同情况下的函数调用，this指向也不同
+        // 函数调用
+        // 函数模式调用
+        // fn()             window
+        // 方法模式调用      调用者
+        // 构造函数模式      新实例化的对象
+        // call，apply      第一个参数
+        // 原则上call和apply实际意义是一模一样的，只不过写法不同，apply，两个参数，第一个是指向，第二个数组
+        // call正常传值就可以了
+
+        // var person = {
+        //     ming:"杨晨光"
+        // }
+        // function fn(){
+        //     console.log(this.ming);
+        // }
+        // fn();        this指向window          没有一个全局变量叫ming
+        // fn.call(person);
+        // 瀑布流会用到一次
+        // 找到数组当中的最小值
+        // 年后
+
+
+        // fn.call(person,1,2)
+        // fn.apply(person,[1,2])
+        // 就是单纯的写法不一样
+
+        
+    </script>
+</body>
+</html>

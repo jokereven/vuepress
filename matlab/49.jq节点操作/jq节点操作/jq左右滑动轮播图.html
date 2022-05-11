@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div{
+            width: 600px;
+            height: 500px;
+            margin: 100px auto;
+            border: 1px solid gray;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            display: flex;
+            width: 3000px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        li{
+            width: 600px;
+            height: 500px;
+        }
+        img{
+            width: 600px;
+            height: 500px;
+        }
+        button{
+            width: 30px;
+            height: 50px;
+            background: none;
+            color: white;
+            font-size: 22px;
+            position: absolute;
+            top:225px;
+            border: 1px solid gray;
+        }
+        button:nth-of-type(2){
+            right: 0;
+        }
+        ol{
+            position: absolute;
+            bottom: 10px;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            left: 20%;
+        }
+        ol>li{
+            width: 20px;
+            height: 20px;
+            border: 2px solid gray;
+            background: none;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.jpg" alt=""></li>
+            <li><img src="1.jpg" alt=""></li>
+        </ul>
+        <ol>
+            <li style="background: red;"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <button><</button>
+        <button>></button>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        var index = 0;
+        var sp = 0;
+        var timer;
+        $("button:last").click(function(){
+            index++;
+            $("ul").stop(true,true);
+            // if($("ul").offset().left<-1200){
+            //     $("ul").css("left","0px");
+            // }
+            
+            if(index>4){
+                index = 1;
+                $("ul").css("left",0);
+            }
+            
+            sp++
+            sp = index;
+            if(sp>3){
+                sp = 0
+            }
+            
+            $("ul").stop(true,true).animate({"left":-index*600+"px"},500);
+            // offset().left         offsetLeft
+            // console.log($("ul").offset().left);
+            yd()
+        })
+        $("button:first").click(function(){
+            index--;
+            $("ul").stop(true,true);
+            // if($("ul").offset().left>600){
+            //     $("ul").css("left","-2400px");
+            // }
+            
+            if(index<0){
+                index = 3;
+                $("ul").css("left","-2400px")
+            }
+            sp--
+            if(sp<0){
+                sp = 3
+            }
+            sp = index;
+            $("ul").stop(true,true).animate({"left":-index*600+"px"},500);
+            yd()
+        })
+
+        $("ol>li").click(function(){
+            // 点击的时候获取到点击的li的下标值
+            index = $(this).index();
+            $("ul").stop(true,true).animate({left:index*-600+"px"},500);
+            sp = index;
+            yd();
+        })
+
+        function yd(){
+            $("ol>li").eq(sp).css("background","red").siblings().css("background","none")
+        }
+
+        var bian = function(){
+            index++;
+            $("ul").stop(true,true);
+            // if($("ul").offset().left<-1200){
+            //     $("ul").css("left","0px");
+            // }
+            
+            if(index>4){
+                index = 1;
+                $("ul").css("left",0);
+            }
+            
+            sp++
+            sp = index;
+            if(sp>3){
+                sp = 0
+            }
+            
+            $("ul").stop(true,true).animate({"left":-index*600+"px"},500);
+            // offset().left         offsetLeft
+            // console.log($("ul").offset().left);
+            yd()
+        }
+        timer = setInterval(bian,2500);
+        $("div").hover(function(){
+            clearInterval(timer)
+        },function(){
+            timer = setInterval(bian,2500);
+        })
+    </script>
+</body>
+</html>

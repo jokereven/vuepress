@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            overflow: auto;
+            padding: 50px;
+            border: 5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给哇哦规划哇哦i工农王鸥i挖沟i娃儿国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚国外啊我很尬我干诺王鸥王鸥我红袜欧冠货物哦啊韩国哇过后哇哦我号杠哈我u刚好五i给
+    </div>
+    <script>
+        // client系列    可以理解为可视区域宽高     不把滚动条和边框算在内
+        // offset系列    width+padding+border       包含边框和滚动条
+        // scroll系列    不包含滚动条和border       实际的宽高,包括隐藏元素的宽高
+        // var box = document.getElementsByTagName("div")[0];
+        // console.log(box.clientWidth);
+        // console.log(box.clientHeight);
+        // console.log(box.offsetWidth);       //300+50+50+5+5
+        // console.log(box.offsetHeight);
+        // console.log(box.scrollWidth);
+        // console.log(box.scrollHeight);
+
+
+        // 获取浏览器窗口的尺寸
+        // 浏览器内部的宽高
+        // console.log(window.innerWidth);
+        // console.log(window.innerHeight);
+
+        // HTML文档所在窗口宽高
+        // document.documentElement.clientWidth
+        // 兼容写法
+        // IE
+        // document.body.clientWidth
+        // var width = document.documentElement.clientWidth || document.body.clientWidth
+        // var height = document.documentElement.clientHeight || document.body.clientHeight
+        // console.log(width);
+        // console.log(height);
+
+
+        // onscroll滚动条事件
+        document.getElementsByTagName("div")[0].onscroll = function(){
+            // console.log("aaaa");
+            console.log(document.getElementsByTagName("div")[0].scrollTop);
+        }
+
+        // 滚动距离
+        // scrollTop   scrollLeft
+        // 获取当前对象距离窗口顶部的距离，也就是被滚走的高度
+        // 距离向左的距离
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <script>
+        // function add(a,b){                   //A
+        //     console.log(a+b);
+        // }
+        // function cut(a,b){                   //B
+        //     console.log(a-b);
+        // }
+        // cut.call(add,1,2);
+        // B.apply(A)          A调用B的方法
+        // 上下文调用(call,apply)
+
+
+        // var ming = "熊大";
+        // var person = {
+        //     ming:"熊二"
+        // }
+        // function fn(){
+        //     console.log(this.ming);
+        // }
+        // fn();
+        // fn.apply(person);
+        // 当函数模式调用的时候，this指向window，window只有一个熊大，当使用apply模式调用以后，并且传入第一个参数，这个时候，this就被绑定到person对象上,如果apply里面不传入任何参数，this指向window
+        // fn.apply();
+
+
+
+        // 什么情况下会使用call和apply的方法
+        // function changeStyle(attr,value){
+            // attr代表属性   value代表值
+            // this.style[attr] = value;
+            // this.style[attr] = value;
+        // }
+        // var box = document.getElementsByTagName("div")[0];
+        // window.changeStyle.call(box,"background","red");
+        // 因为window里面没有style属性，所以，需要改变一下this指向
+
+
+        var teacher = {
+            ming:"光头强",
+            sayHello:function(a,b){
+                console.log("姓名："+this.ming+"班级："+a+"成绩："+b);
+            }
+        }
+        teacher.sayHello(1,100);
+        var student = {
+            ming:"熊大"
+        }
+        // 使用call和apply改变一下this指向
+        teacher.sayHello.call(student,2,60);
+        teacher.sayHello.apply(student,[3,85]);
+        // 甲鱼的屁股：规定
+    </script>
+</body>
+</html>

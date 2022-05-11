@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- <button>添加</button> -->
+        <input type="button" value="添加">
+        <input type="button" value="删除">
+        <input type="button" value="查找">
+        <input type="button" value="修改">
+    </div>
+</body>
+<script>
+    var btn = document.getElementsByTagName("button");
+    var div = document.getElementsByTagName("div")[0];
+    div.addEventListener("click",function(event){
+        event = event || window.event;
+        target = event.target ||event.srcElement;
+        if(target.nodeName.toLowerCase()=="input"){
+            // switch()
+            // console.log(target.value);
+            switch(target.value){
+                case "添加":
+                alert("添加");
+                break;
+                case "删除":
+                alert("删除");
+                break;
+                case "查找":
+                alert("查找");
+                break;
+                case "修改":
+                alert("修改");
+                break;
+            }
+        }
+    },false)
+</script>
+</html>

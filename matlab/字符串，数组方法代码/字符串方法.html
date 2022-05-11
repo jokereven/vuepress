@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>
+                8
+            </td>
+            <td>9</td>
+        </tr>
+    </table> -->
+    <!-- 查找是否有某一个人     td的innerHTML   indexOf() -->
+    <!-- li      LI -->
+
+    <script>
+        // 知识点：字符串方法
+        // 讲一个案例效果：选项卡套轮播图
+        // 利用数组
+        // 字符串方法
+        // 凡是左右两侧被单引号或双引号包裹的值就是字符串
+        // var txt = "aowgnwo nwaognwiang awipghnwapg";
+        // console.log(typeof txt);
+        // length    长度
+        // console.log(txt.length);        //空格也算在内
+        // 查找字符串
+        // indexOf() 正序查找   lastIndexOf()   倒序查找
+        // console.log(txt.indexOf("wo"));     //找到了wo，并返回下标值
+        // console.log(txt.indexOf("o"));      //找到返回匹配值的第一个值，并返回下标值
+        // console.log(txt.indexOf("c"));      //在查找元素的时候，匹配不到，返回-1
+        // console.log(txt.indexOf("hello"));      //只要找不到匹配元素，返回的值就是-1
+        // 判断最后的值是不是一个-1，如果是-1，说明找不到，反之，可以找到
+        // alert("查无此人")
+
+        // var txt = "asdfghjklaohgoiwhgwi";
+        // console.log(txt.lastIndexOf("i"));     // 0   -1   length+1  length-1    1   19   -2  2   length
+        // console.log(txt.indexOf("i"));
+        // 19    下标值
+        // indexOf()和laseIndexOf()的唯一区别就是查找的方向不同
+        // 都是找到匹配的值，并返回下标
+        // laseIndexOf()从后往前查，但是返回的下标值，还是正常的下标值
+
+        // 截取字符串
+        // slice()     一个或者两个参数    可以接收负数     
+        // 两个参数的情况下，第一个参数代表是初始位值，第二个代表是结束位值
+        // 包含开始，但是不包含结束
+        // 一个参数的情况下，从这个参数的位值一直截取到末尾
+        // var txt = "asdera waoighw awoighwa";
+        // console.log(txt.slice(5,9));
+        // console.log(txt.slice(3));
+        // console.log(txt.slice(-9,-5));
+        // substring()截取
+        // console.log(txt.substring(3,6));    era没有空格    包含开始，不包含结束
+        // substring不能接收负数
+        // substr()    第一个参数代表初始位值，第二个参数代表截取长度
+        // console.log(txt.substr(3,5));       //era  r  er  a  ea  era w   ra
+        // console.log(txt.substr(3))
+        // 替换         把一个给定的字符替换成另一个
+        // replace(值1，值2)    值1替换成值2
+        // var txt = "today is a good DAY we are so happy nice to meet you";
+        // txt.replace("happy","sad");
+        // console.log(txt);
+        // console.log(txt.replace("happy","sad"));
+        // 简单的丫批
+        // toUpperCase()    大写   tolowerCase()    小写
+        // console.log(txt.toUpperCase());
+        // console.log(txt.toLowerCase());
+        
+        // trim()   删除空白部分        兼容性问题， IE8以及以下不支持
+        // var txt = "         asd          ";
+        // console.log(txt.trim());
+
+        // htmlcss兼容性问题
+        // 弹性盒模型    ie低版本不能执行
+
+        // 还是会有人用的
+        
+        // 字符串---》数组
+        // var txt = "123,456,789";
+        // console.log(txt.split(","));
+        // console.log(txt.split("|"));
+
+        // 本地存储
+
+
+    </script>
+</body>
+</html>

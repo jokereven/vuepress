@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            width: 500px;
+            height: 600px;
+            border: 5px solid;
+            border-top-color: blue;
+            border-bottom-color: orange;
+            border-right-color: pink;
+            border-left-color: yellow;
+            margin: 0 auto;
+            position: relative;
+        }
+        #one>div{
+            width: 30px;
+            height: 30px;
+            background: blue;
+            border-radius: 50%;
+            position: absolute;
+        }
+        #two{
+            width: 400px;
+            height: 40px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        button{
+            width: 120px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div></div>
+    </div>
+    <div id="two">
+        <button onclick="obj.start()">开始</button>
+        <button onclick="obj.pause()">结束</button>
+    </div>
+
+    <script>
+
+        // var obj = {
+        //     name:"蒋辉",
+        //     age:20,
+        //     sayName:function(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // obj.sayName()
+
+
+
+        // 创建一个空对象
+        var obj = {};
+        // 定时器
+        obj.timer = null;
+        // 初始位置
+        obj.x = 0;
+        obj.y = 0;
+        // 步长
+        obj.xstep = 10;
+        obj.ystep = 10;
+        // 颜色
+        obj.color = "blue";
+        // 需要一个方法来定义小球的运动轨迹
+        obj.update = function(w,h){
+            this.x = this.x + this.xstep;
+            this.y = this.y + this.ystep;
+
+            // 4次判断
+            // 左
+            if(this.x<0){
+                this.x = 0;
+                this.color = "yellow";
+                this.xstep = -this.xstep;
+            }
+            // 上
+            if(this.y<0){
+                this.y = 0;
+                this.color = "blue";
+                this.ystep = -this.ystep;
+            }
+            // 右
+            if(this.x>w-30){
+                this.x = w-30;
+                this.xstep = -this.xstep;
+                this.color = "pink";
+            }
+            // 下
+            if(this.y>h-30){
+                this.y = h-30;
+                this.ystep = -this.ystep;
+                this.color = "orange";
+            }
+        }
+
+
+        // 再写一个方法，调用一下上面定义好的过程
+        obj.draw = function(){
+            // 创建一个实参
+            var w = 500;
+            var h = 600;
+            var one = document.getElementById("one");
+            var one_div = one.getElementsByTagName("div")[0];
+            this.update(w,h);
+            one_div.style.left = this.x+"px";
+            one_div.style.top = this.y+"px";
+            one_div.style.background = this.color;
+        }
+
+        obj.start = function(){
+            this.pause();
+            this.timer = setInterval("obj.draw()",30);
+        }
+        obj.pause = function(){
+            clearInterval(this.timer);
+        }
+    </script>
+</body>
+</html>

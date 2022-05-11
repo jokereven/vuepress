@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #nav{
+            display: flex;
+        }
+        li{
+            width: 300px;
+            height: 40px;
+            border: 1px solid gray;
+            text-align: center;
+            line-height: 40px;
+        }
+        #nav>li{
+            position: relative;
+        }
+        ol{
+            position: absolute;
+            top: 41px;
+            left: -1px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 下拉菜单 -->
+    <!-- 布局方面 -->
+    <ul id="nav">
+        <li>RNG
+            <ol>
+                <li>LetMe</li>
+                <li>UZI</li>
+                <li>MLXG</li>
+            </ol>
+        </li>
+        <li>IG
+            <ol>
+                <li>TheShy</li>
+                <li>Rookie</li>
+                <li>Puff</li>
+                <li>Baolan</li>
+            </ol>
+        </li>
+        <li>EDG
+            <ol>
+                <li>Clearlove7</li>
+                <li>Ray</li>
+                <li>iBoy</li>
+            </ol>
+        </li>
+    </ul>
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $("#nav>li").hover(function(){
+            $(this).children("ol").stop(true,false).slideDown(300);
+        },function(){
+            $(this).children("ol").stop(true,false).slideUp(300);
+        })
+    </script>
+</body>
+</html>

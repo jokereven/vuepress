@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数继承(和原型没有关系)
+        // 借用构造函数的思想利用call或者apply把父类中通过this指定的属性和方法复制过来
+        // 核心：使用父类的构造函数来增强字类实例，等于是复制父类的实例属性给字类
+        // 缺点：方法都是在构造函数中定义，只能继承父类的实例属性和方法，不能继承原型属性和方法，无法实现函数复用，影响性能
+        function Person(name){
+            this.name = name;
+            this.friends = ["萧然","超人"];
+            this.getName = function(){
+                return this.name;
+            }
+        }
+
+        // 新的构造函数
+        function Parent(age){
+            Person.call(this,"周鸣");       //关键          复制Person的属性和方法
+            this.age = age;
+        }
+
+        var parent = new Parent(22);
+        console.log(parent.age);        //本身的
+        console.log(parent.name);       //复制Person
+        console.log(parent.friends);
+        console.log(parent.getName());
+    </script>
+</body>
+</html>
